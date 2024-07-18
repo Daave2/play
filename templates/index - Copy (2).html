@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #23395d;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .header-button {
+            background-color: #367D91;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header-right .header-button {
+            margin-left: 10px;
+        }
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        main {
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .controls, .schedule, .log-section, .progress-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .control-button {
+            background-color: #367D91;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .schedule {
+            overflow-x: auto;
+        }
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .schedule th, .schedule td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .schedule th {
+            background-color: #367D91;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .countdown {
+            color: green;
+        }
+        .schedule-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .flatpickr-input {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .log-section {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+            position: relative;
+            word-break: break-all;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .log-entry {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            overflow-wrap: break-word;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .log-entry.log-error {
+            color: red;
+        }
+        .log-entry.log-info {
+            color: blue;
+        }
+        .log-entry.log-success {
+            color: green;
+        }
+        .copy-button {
+            background-color: #367D91;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .progress-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-wrap: break-word;
+        }
+        .progress-text, .current-url, .last-store {
+            margin: 0;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 20px;
+            width: 0;
+            background-color: #367D91;
+            border-radius: 5px;
+            transition: width 0.3s ease-in-out;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #367D91;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 1080px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .control-button, .header-button {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode header {
+            background-color: #1e1e1e;
+        }
+        .dark-mode .controls, .dark-mode .schedule, .dark-mode .log-section, .dark-mode .progress-section {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
+        .dark-mode .schedule th {
+            background-color: #1e1e1e;
+        }
+        .dark-mode .log-section {
+            background-color: #1e1e1e;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content span.close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .modal-content span.close:hover,
+        .modal-content span.close:focus {
+            color: red;
+        }
+        #loading .modal-content {
+            width: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            background-color: transparent;
+            border: none;
+        }
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+        .toast #toastMessage {
+            margin: 10px 16px;
+            padding: 16px;
+        }
+        .toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        @-webkit-keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+        @-webkit-keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+
+            .status-section, .log-section {
+                padding: 10px;
+            }
+
+            .header-right {
+                flex-direction: column;
+            }
+
+            .header-button {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Metrics</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-button" onclick="openLink('https://docs.google.com/spreadsheets/d/1fRZiGySEqtVkNkg3wmTgNGr7EvGW8Zy_FB0ArX-cVrs/edit?gid=852188205#gid=852188205')">Output Spreadsheet</button>
+            <button class="header-button" onclick="openLink('https://docs.google.com/spreadsheets/d/1v9a7ruWgPMdUzWoWM4GWVk4JUgeD7qk8t7TO0IF3UBI/edit?gid=183737495#gid=183737495')">Daily Update</button>
+            <button class="header-button" onclick="openLink('http://16.170.203.179:5001/')">INF Lines</button>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        </div>
+    </header>
+    <main>
+        <div class="controls">
+            <button class="control-button" onclick="startExtraction()">Start Now</button>
+            <button class="control-button" onclick="stopExtraction()">Stop</button>
+        </div>
+        <div class="progress-section">
+            <p class="progress-text">Progress: <span id="progressText">0/0</span> (<span id="progressPercentage">0%</span>)</p>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p class="current-url">Processing: <span id="currentUrl">N/A</span></p>
+            <p class="last-store">Last Store: <span id="lastStore">N/A</span></p>
+        </div>
+        <div class="schedule">
+            <h2>Schedule</h2>
+            <div class="schedule-inputs">
+                <input type="text" id="scheduleName" placeholder="Schedule Name">
+                <input type="text" id="datetimePicker" class="flatpickr-input" placeholder="Select Date and Time">
+                <label><input type="checkbox" id="repeatDaily"> Repeat Daily</label>
+                <button class="control-button" onclick="addSchedule()">Add Schedule</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Countdown</th>
+                        <th>Repeat Daily</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleTableBody">
+                    <!-- Schedule entries will be added here -->
+                </tbody>
+            </table>
+            <div class="stats">
+                <p>Last Run: <span id="last-run">N/A</span></p>
+                <p>Next Scheduled Run: <span id="next-run">N/A</span></p>
+            </div>
+        </div>
+        <div class="log-section">
+            <h2>Log</h2>
+            <div id="logText"></div>
+            <button class="copy-button" onclick="clearLog()">Clear Log</button>
+        </div>
+    </main>
+    <div id="loading-spinner" class="spinner" style="display:none;"></div>
+    <div id="confirmation-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button onclick="confirmAction()">Confirm</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+    <div id="edit-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3>Edit Schedule</h3>
+            <input type="text" id="editScheduleName" placeholder="Schedule Name">
+            <input type="text" id="editDatetimePicker" class="flatpickr-input" placeholder="Select Date and Time">
+            <label><input type="checkbox" id="editRepeatDaily"> Repeat Daily</label>
+            <button class="control-button" onclick="saveEdit()">Save</button>
+            <button class="control-button" onclick="closeEditModal()">Cancel</button>
+        </div>
+    </div>
+    <script>
+        let editScheduleId = null;
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            flatpickr("#datetimePicker", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i:S",
+            });
+            flatpickr("#editDatetimePicker", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i:S",
+            });
+            fetchSchedules();  // Fetch existing schedules on page load
+            setInterval(updateProgress, 1000);
+            setInterval(updateLog, 1000);
+            setInterval(updateStats, 1000);
+            setInterval(updateCountdowns, 1000);
+        });
+
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        function preloadDefaultCSV() {
+            fetch('/load_default').then(response => response.json()).then(data => {
+                if (data.success) {
+                    console.log('Default CSV preloaded successfully');
+                } else {
+                    console.error('Error preloading default CSV');
+                }
+            });
+        }
+
+        function startExtraction() {
+            fetch('/start_now', { method: 'POST' }).then(response => response.json()).then(data => {
+                showToast(data.status);
+            });
+        }
+
+        function stopExtraction() {
+            fetch('/stop', { method: 'POST' }).then(response => response.json()).then(data => {
+                showToast(data.status);
+            });
+        }
+
+        function clearLog() {
+            fetch('/clear_log', { method: 'POST' }).then(response => response.json()).then(data => {
+                showToast(data.status);
+                fetchLogs();
+            });
+        }
+
+        function fetchSchedules() {
+            fetch('/schedules').then(response => response.json()).then(data => {
+                const tbody = document.getElementById('scheduleTableBody');
+                tbody.innerHTML = '';  // Clear existing rows
+                data.schedules.forEach(schedule => {
+                    addScheduleRow(schedule);
+                });
+            }).catch(err => {
+                console.error('Error fetching schedules:', err);
+            });
+        }
+
+        function addSchedule() {
+            const name = document.getElementById('scheduleName').value;
+            let datetime = document.getElementById('datetimePicker').value;
+            const repeatDaily = document.getElementById('repeatDaily').checked;
+            if (!datetime) {
+                showToast('Please select a date and time');
+                return;
+            }
+            // Ensure datetime string has seconds
+            if (datetime.length === 16) {
+                datetime += ':00';
+            }
+            fetch('/add_schedule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: name, datetime: datetime, repeat_daily: repeatDaily }),
+            }).then(response => response.json()).then(data => {
+                if (data.success) {
+                    fetchSchedules();
+                } else {
+                    showToast('Error adding schedule');
+                }
+            }).catch(err => {
+                console.error('Error adding schedule:', err);
+            });
+        }
+
+        function addScheduleRow(schedule) {
+            const tbody = document.getElementById('scheduleTableBody');
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${schedule.name}</td>
+                <td>${moment(schedule.datetime).format('LLL')}</td>
+                <td class="countdown" data-datetime="${schedule.datetime}"></td>
+                <td class="repeat-daily-checkbox">
+                    <input type="checkbox" ${schedule.repeat_daily ? 'checked' : ''} onclick="toggleRepeatDaily('${schedule.id}', this.checked)">
+                </td>
+                <td class="schedule-actions">
+                    <button class="control-button" onclick="editSchedule('${schedule.id}', '${schedule.name}', '${schedule.datetime}', ${schedule.repeat_daily})">Edit</button>
+                    <button class="control-button delete-button" onclick="deleteSchedule('${schedule.id}')">Delete</button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        }
+
+        function deleteSchedule(scheduleId) {
+            fetch(`/delete_schedule/${scheduleId}`, { method: 'POST' }).then(response => response.json()).then(data => {
+                if (data.success) {
+                    fetchSchedules();
+                } else {
+                    showToast('Error deleting schedule');
+                }
+            }).catch(err => {
+                console.error('Error deleting schedule:', err);
+            });
+        }
+
+        function toggleRepeatDaily(scheduleId, repeatDaily) {
+            fetch(`/toggle_repeat_daily/${scheduleId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ repeat_daily: repeatDaily }),
+            }).then(response => response.json()).then(data => {
+                if (!data.success) {
+                    showToast('Error toggling repeat daily');
+                }
+            }).catch(err => {
+                console.error('Error toggling repeat daily:', err);
+            });
+        }
+
+        function updateProgress() {
+            fetch('/progress_status').then(response => response.json()).then(data => {
+                document.getElementById('progressText').innerText = `${data.progress.current}/${data.progress.total}`;
+                document.getElementById('progressPercentage').innerText = `${data.percentage.toFixed(2)}%`;
+                document.getElementById('progressBar').style.width = `${data.percentage.toFixed(2)}%`;
+                document.getElementById('currentUrl').innerHTML = data.last_log_message;  // Use innerHTML to render HTML tags
+                document.getElementById('lastStore').innerText = data.progress.lastStore;
+            }).catch(error => {
+                console.error('Error updating progress:', error);
+            });
+        }
+
+        function updateLog() {
+            fetch('/log').then(response => response.json()).then(data => {
+                const logText = document.getElementById('logText');
+                logText.innerHTML = '';
+                data.logs.split('\n').forEach(line => {
+                    if (line.trim()) {
+                        let logClass = 'log-entry';
+                        if (line.includes('log-error')) logClass += ' log-error';
+                        if (line.includes('log-info')) logClass += ' log-info';
+                        if (line.includes('log-success')) logClass += ' log-success';
+
+                        const logEntry = document.createElement('div');
+                        logEntry.className = logClass;
+                        logEntry.innerHTML = line;
+
+                        logText.appendChild(logEntry);
+                    }
+                });
+                logText.scrollTop = logText.scrollHeight;
+            }).catch(error => {
+                console.error('Error updating log:', error);
+            });
+        }
+
+        function updateStats() {
+            fetch('/stats').then(response => response.json()).then(data => {
+                document.getElementById('last-run').innerText = data.last_run_time || 'N/A';
+                document.getElementById('next-run').innerText = data.next_run_time || 'N/A';
+            }).catch(error => {
+                console.error('Error updating stats:', error);
+            });
+        }
+
+        function updateCountdowns() {
+            const countdownElements = document.querySelectorAll('.countdown');
+            countdownElements.forEach(el => {
+                const dateTime = el.getAttribute('data-datetime');
+                const countdownDate = new Date(dateTime).getTime();
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                if (distance < 0) {
+                    el.innerHTML = "Expired";
+                    el.style.color = "red";
+                } else {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    el.innerHTML = `${days > 0 ? days + 'd ' : ''}${hours}h ${minutes}m ${seconds}s`;
+                }
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelectorAll('.controls, .schedule, .log-section, .progress-section').forEach((element) => {
+                element.classList.toggle('dark-mode');
+            });
+        }
+
+        function editSchedule(id, name, datetime, repeatDaily) {
+            editScheduleId = id;
+            document.getElementById('editScheduleName').value = name;
+            document.getElementById('editDatetimePicker')._flatpickr.setDate(datetime);
+            document.getElementById('editRepeatDaily').checked = repeatDaily;
+            document.getElementById('edit-modal').style.display = 'flex'; // Changed from 'block' to 'flex'
+        }
+
+        function saveEdit() {
+            const name = document.getElementById('editScheduleName').value;
+            let datetime = document.getElementById('editDatetimePicker').value;
+            const repeatDaily = document.getElementById('editRepeatDaily').checked;
+            if (!datetime) {
+                showToast('Please select a date and time');
+                return;
+            }
+            // Ensure datetime string has seconds
+            if (datetime.length === 16) {
+                datetime += ':00';
+            }
+            fetch(`/edit_schedule/${editScheduleId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: name, datetime: datetime, repeat_daily: repeatDaily }),
+            }).then(response => response.json()).then(data => {
+                if (data.success) {
+                    fetchSchedules();
+                    closeEditModal();
+                } else {
+                    showToast('Error editing schedule');
+                }
+            }).catch(err => {
+                console.error('Error editing schedule:', err);
+            });
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast show';
+            toast.innerHTML = `<div id="toastMessage">${message}</div>`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                toast.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

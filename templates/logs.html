@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #000;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #23395d;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .header-button {
+            background-color: #367D91;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header-right .header-button {
+            margin-left: 10px;
+        }
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        main {
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .table-container {
+            margin: 0 auto;
+            max-width: 1200px;
+            overflow-x: auto;
+        }
+        table.dataTable {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .filter-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+        }
+        .filter-section input, .filter-section select, .filter-section button {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: auto;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+            margin: 5px 0;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode header {
+            background-color: #1e1e1e;
+        }
+        .dark-mode .filter-section {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+        }
+        .dark-mode .filter-section input, .dark-mode .filter-section select, .dark-mode .filter-section button {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
+        .dark-mode table.dataTable {
+            color: #000;
+        }
+        .dark-mode .dataTables_filter label,
+        .dark-mode .dataTables_length label {
+            color: white;
+        }
+        .dark-mode .dataTables_info {
+            color: white;
+        }
+        .dark-mode .paginate_button {
+            color: white !important;
+        }
+        .download-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #367D91;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .highlight-red {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Add FontAwesome for icons -->
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Submitted Logs</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-button" onclick="window.location.href='/'">Home</button>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        </div>
+    </header>
+    <main>
+        <div class="filter-section">
+            <input type="text" id="datePicker" placeholder="Select Date Range">
+            <select id="storeFilter">
+                <option value="">All Stores</option>
+            </select>
+            <button class="download-button" onclick="downloadCSV()">Download CSV</button>
+            <button class="download-button" onclick="filterLatestPerStore()">Latest Entry Per Store Per Day</button>
+        </div>
+        <div class="table-container">
+            <table id="logsTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Store</th>
+                        <th>Orders</th>
+                        <th>Units</th>
+                        <th>Fulfilled</th>
+                        <th>UPH</th>
+                        <th>INF</th>
+                        <th>Found</th>
+                        <th>Cancelled</th>
+                        <th>Lates</th>
+                        <th>Time Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function() {
+            const table = $('#logsTable').DataTable({
+                "ajax": {
+                    "url": "/api/logs",
+                    "dataSrc": function (json) {
+                        return json.map(function (log) {
+                            log.store = log.store.replace(/Morrisons\s?/g, '');
+                            return log;
+                        });
+                    }
+                },
+                "columns": [
+                    { "data": "timestamp" },
+                    { "data": "store" },
+                    { "data": "orders" },
+                    { "data": "units" },
+                    { "data": "fulfilled" },
+                    { "data": "uph" },
+                    { "data": "inf" },
+                    { "data": "found" },
+                    { "data": "cancelled" },
+                    { "data": "lates" },
+                    { "data": "time_available" }
+                ],
+                "order": [[0, "desc"]],
+                "pageLength": 100,
+                "initComplete": function(settings, json) {
+                    let storeSet = new Set();
+                    json.forEach(log => {
+                        storeSet.add(log.store);
+                    });
+                    storeSet.forEach(store => {
+                        $('#storeFilter').append(new Option(store, store));
+                    });
+                },
+                "createdRow": function(row, data, dataIndex) {
+                    if (parseFloat(data.inf) > 2) {
+                        $('td:eq(6)', row).addClass('highlight-red');
+                    }
+                    if (parseFloat(data.lates) > 3) {
+                        $('td:eq(9)', row).addClass('highlight-red');
+                    }
+                    if (parseFloat(data.uph) < 80) {
+                        $('td:eq(5)', row).addClass('highlight-red');
+                    }
+                }
+            });
+
+            flatpickr("#datePicker", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+                onChange: function(selectedDates, dateStr, instance) {
+                    table.draw();
+                }
+            });
+
+            $('#storeFilter').on('change', function() {
+                table.draw();
+            });
+
+            $.fn.dataTable.ext.search.push(
+                function(settings, data, dataIndex) {
+                    const store = $('#storeFilter').val();
+                    const dateRange = $('#datePicker').val().split(' to ');
+                    const startDate = dateRange[0] ? new Date(dateRange[0]) : null;
+                    const endDate = dateRange[1] ? new Date(dateRange[1]) : null;
+                    const logDate = new Date(data[0]);
+
+                    if ((store === "" || data[1] === store) &&
+                        (!startDate || logDate >= startDate) &&
+                        (!endDate || logDate <= endDate)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+        });
+
+        function downloadCSV() {
+            const startDate = $('#datePicker').val().split(' to ')[0] || '';
+            const endDate = $('#datePicker').val().split(' to ')[1] || '';
+            const store = $('#storeFilter').val() || '';
+            const url = `/api/logs/download?start_date=${startDate}&end_date=${endDate}&store=${store}`;
+            window.location.href = url;
+        }
+
+        function filterLatestPerStore() {
+            $.ajax({
+                url: '/api/logs/latest_per_store',
+                success: function(data) {
+                    const table = $('#logsTable').DataTable();
+                    table.clear();
+                    table.rows.add(data);
+                    table.draw();
+                }
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelectorAll('.filter-section, .filter-section input, .filter-section select, .filter-section button').forEach((element) => {
+                element.classList.toggle('dark-mode');
+            });
+        }
+    </script>
+</body>
+</html>
