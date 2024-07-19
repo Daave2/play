@@ -1,10 +1,10 @@
 import logging
 from datetime import datetime
-from quart import Quart, jsonify, render_template, request, send_file
+from quart import Quart, jsonify, render_template, request, send_file, Response
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.date import DateTrigger
 from apscheduler.triggers.interval import IntervalTrigger
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, Page, BrowserContext
 import os
 import re
 import requests
@@ -15,7 +15,8 @@ import io
 import psutil
 import asyncio
 from threading import Thread, Lock
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Optional, Dict
 
 # Load configuration from config.json
 with open('config.json', 'r') as config_file:
@@ -29,58 +30,31 @@ scheduler.start()
 
 SCHEDULE_FILE = 'schedules.json'
 LOG_FILE = os.path.join('output', 'submissions.log')
-DEBUG_LOG_FILE = os.path.join('output', 'debug.log')
 
 log_lock = Lock()
 progress_lock = Lock()
 
-# Custom log filter to suppress logs for specific endpoints
-class SuppressEndpointFilter(logging.Filter):
-    def __init__(self, endpoints):
-        super().__init__()
-        self.endpoints = endpoints
-
-    def filter(self, record):
-        return not any(endpoint in record.getMessage() for endpoint in self.endpoints)
-
 # Setup logging
 def setup_logging():
     app_logger = logging.getLogger('app')
-    debug_logger = logging.getLogger('debug')
-
     app_logger.setLevel(logging.INFO)
-    debug_logger.setLevel(logging.DEBUG)
 
     app_file_handler = logging.FileHandler('app.log')
-    debug_file_handler = logging.FileHandler(DEBUG_LOG_FILE)
-
     console_handler = logging.StreamHandler()
 
     app_file_handler.setLevel(logging.INFO)
-    debug_file_handler.setLevel(logging.DEBUG)
     console_handler.setLevel(logging.INFO)
 
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
     app_file_handler.setFormatter(formatter)
-    debug_file_handler.setFormatter(formatter)
     console_handler.setFormatter(formatter)
-
-    suppress_endpoints = ['/progress_status', '/log', '/stats']
-    filter = SuppressEndpointFilter(suppress_endpoints)
-
-    app_logger.addFilter(suppress_endpoints)
-    app_file_handler.addFilter(filter)
-    debug_file_handler.addFilter(filter)
-    console_handler.addFilter(filter)
 
     app_logger.addHandler(app_file_handler)
     app_logger.addHandler(console_handler)
-    debug_logger.addHandler(debug_file_handler)
-    debug_logger.addHandler(console_handler)
 
-    return app_logger, debug_logger
+    return app_logger
 
-app_logger, debug_logger = setup_logging()
+app_logger = setup_logging()
 
 werkzeug_logger = logging.getLogger('werkzeug')
 werkzeug_logger.setLevel(logging.ERROR)
@@ -101,7 +75,46 @@ next_run_time = None
 
 otp_pattern = r'(\d{4,8})'
 
-async def perform_login_and_otp(page):
+def load_default_data():
+    global urls_data
+    try:
+        with open('urls.csv', 'r') as file:
+            urls_data = [row.strip() for row in file.readlines()]
+        app_logger.info(f'{len(urls_data)} URLs loaded from urls.csv')
+    except Exception as e:
+        app_logger.error("Failed to load the default CSV file. Please check the file path and format.")
+
+def update_last_run_time():
+    global last_run_time
+    last_run_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+def update_next_run_time():
+    global next_run_time
+    jobs = scheduler.get_jobs()
+    if jobs:
+        next_run_time = jobs[0].next_run_time.strftime('%Y-%m-%d %H:%M:%S')
+    else:
+        next_run_time = None
+
+def ensure_storage_state():
+    state_file = 'state.json'
+    if not os.path.exists(state_file) or os.path.getsize(state_file) == 0:
+        with open(state_file, 'w') as f:
+            json.dump({}, f)
+
+async def login_and_get_context() -> Optional[BrowserContext]:
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context()
+        page = await context.new_page()
+        if await perform_login_and_otp(page):
+            await context.storage_state(path='state.json')
+            await browser.close()
+            return context
+        await browser.close()
+        return None
+
+async def perform_login_and_otp(page: Page) -> bool:
     global login_required, otp_required, is_logged_in
     try:
         await page.goto(LOGIN_URL)
@@ -137,46 +150,9 @@ async def perform_login_and_otp(page):
             otp_required = True
     except Exception as e:
         app_logger.error("Login and OTP verification failed. Please check your credentials and OTP settings.")
-        debug_logger.debug(traceback.format_exc())
     return False
 
-def load_default_data():
-    global urls_data
-    try:
-        with open('urls.csv', 'r') as file:
-            urls_data = [row.strip() for row in file.readlines()]
-        app_logger.info(f'{len(urls_data)} URLs loaded from urls.csv')
-    except Exception as e:
-        app_logger.error("Failed to load the default CSV file. Please check the file path and format.")
-        debug_logger.debug(traceback.format_exc())
-
-def update_last_run_time():
-    global last_run_time
-    last_run_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-def update_next_run_time():
-    global next_run_time
-    jobs = scheduler.get_jobs()
-    if jobs:
-        next_run_time = jobs[0].next_run_time.strftime('%Y-%m-%d %H:%M:%S')
-    else:
-        next_run_time = None
-
-def ensure_storage_state():
-    state_file = 'state.json'
-    if not os.path.exists(state_file) or os.path.getsize(state_file) == 0:
-        with open(state_file, 'w') as f:
-            json.dump({}, f)
-
-async def pre_login():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
-        page = await context.new_page()
-        await perform_login_and_otp(page)
-        await browser.close()
-
-async def process_url(page, url, retries=3):
+async def process_url(page: Page, url: str, retries=3) -> Optional[Dict[str, str]]:
     global login_required, otp_required, is_logged_in
 
     for attempt in range(retries):
@@ -193,6 +169,8 @@ async def process_url(page, url, retries=3):
                     return None
 
             store_element = await page.wait_for_selector('#partner-switcher button span b', timeout=8000)
+            if not store_element:
+                continue
             store = await store_element.inner_text()
 
             last_cell_xpath = '//*[@id="content"]/div/div[2]/div[2]/kat-tabs/kat-tab[1]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]/kat-table-cell[11]/div'
@@ -200,6 +178,8 @@ async def process_url(page, url, retries=3):
 
             row_xpath = '//*[@id="content"]/div/div[2]/div[2]/kat-tabs/kat-tab[1]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]'
             row_element = await page.wait_for_selector(row_xpath, timeout=8000)
+            if not row_element:
+                continue
 
             cells = await row_element.query_selector_all('kat-table-cell')
             row_data = [await cell.inner_text() for cell in cells]
@@ -208,15 +188,15 @@ async def process_url(page, url, retries=3):
                 data = {
                     'url': url,
                     'store': store,
-                    'orders': row_data[3],
-                    'units': row_data[4],
-                    'fulfilled': row_data[5],
-                    'uph': row_data[6],
-                    'inf': row_data[7],
-                    'found': row_data[8],
-                    'cancelled': row_data[9],
-                    'lates': row_data[10],
-                    'field_11': row_data[1],
+                    'orders': row_data[3] if len(row_data) > 3 else '',
+                    'units': row_data[4] if len(row_data) > 4 else '',
+                    'fulfilled': row_data[5] if len(row_data) > 5 else '',
+                    'uph': row_data[6] if len(row_data) > 6 else '',
+                    'inf': row_data[7] if len(row_data) > 7 else '',
+                    'found': row_data[8] if len(row_data) > 8 else '',
+                    'cancelled': row_data[9] if len(row_data) > 9 else '',
+                    'lates': row_data[10] if len(row_data) > 10 else '',
+                    'field_11': row_data[1] if len(row_data) > 1 else '',
                     'availability': ''
                 }
 
@@ -226,7 +206,8 @@ async def process_url(page, url, retries=3):
 
                     availability_table_xpath = '//*[@id="content"]/div/div[2]/div[2]/kat-tabs/kat-tab[4]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]/kat-table-cell[7]/div'
                     availability_data = await page.wait_for_selector(availability_table_xpath, timeout=5000)
-                    data['availability'] = await availability_data.inner_text()
+                    if availability_data:
+                        data['availability'] = await availability_data.inner_text()
 
                     non_blank_data_points = sum(1 for key, value in data.items() if value.strip())
                     if non_blank_data_points > 4:
@@ -238,14 +219,13 @@ async def process_url(page, url, retries=3):
             break
         except Exception as e:
             app_logger.error("Failed to process URL. Please check the website availability and layout.")
-            debug_logger.debug(traceback.format_exc())
             if attempt < retries - 1:
                 await asyncio.sleep(1)
             else:
                 app_logger.error(f"Max retries reached for {url}. Skipping.")
     return None
 
-async def fill_google_form(page, data, current, total):
+async def fill_google_form(page: Page, data: Dict[str, str], current: int, total: int):
     await page.goto(FORM_URL)
 
     try:
@@ -269,22 +249,17 @@ async def fill_google_form(page, data, current, total):
                 continue
             try:
                 await page.get_by_label(label, exact=True).fill(data[key])
-                debug_logger.debug(f"Filled {label} with {data[key]}")
             except Exception as e:
                 app_logger.error(f"Error filling form field {label} with data {data[key]}: {e}")
-                debug_logger.debug(traceback.format_exc())
 
         try:
             await page.get_by_label("Submit", exact=True).click()
-            debug_logger.debug("Submit button clicked.")
 
             await page.wait_for_selector("//div[contains(text(),'Your response has been recorded.')]", timeout=20000)
-            debug_logger.debug("Form submitted successfully.")
         except Exception as e:
             app_logger.error(f"Error during form submission: {e}")
-            debug_logger.debug(traceback.format_exc())
 
-        log_entry = f"{datetime.now().strftime('%H:%M')} <span style='color:green;'>{data['store']}</span> submitted (Orders {data['orders']}, Units {data['units']}, Fulfilled {data['fulfilled']}, UPH {data['uph']}, INF {data['inf']}, Found {data['found']}, Cancelled {data['cancelled']}, Lates {data['lates']}, Time available: {data['availability']})"
+        log_entry = f"{datetime.now().strftime('%H:%M')} {data['store']} submitted (Orders {data['orders']}, Units {data['units']}, Fulfilled {data['fulfilled']}, UPH {data['uph']}, INF {data['inf']}, Found {data['found']}, Cancelled {data['cancelled']}, Lates {data['lates']}, Time available: {data['availability']})"
         
         with log_lock:
             app_logger.info(log_entry)
@@ -307,7 +282,6 @@ async def fill_google_form(page, data, current, total):
 
     except Exception as e:
         app_logger.error("Failed to fill out the Google Form. Please check the form layout and fields.")
-        debug_logger.debug(traceback.format_exc())
 
 def log_submission(data):
     log_file = LOG_FILE
@@ -331,12 +305,10 @@ def log_submission(data):
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
                 writer.writerows(logs)
-        debug_logger.debug("Submission logged successfully.")
     except IOError:
         app_logger.error("I/O error occurred while logging submission data.")
-        debug_logger.debug(traceback.format_exc())
 
-async def process_url_wrapper(url):
+async def process_url_wrapper(url: str):
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(storage_state='state.json')
@@ -344,9 +316,6 @@ async def process_url_wrapper(url):
         extracted_data = await process_url(page, url)
         if extracted_data:
             await fill_google_form(page, extracted_data, progress['current'], progress['total'])
-        else:
-            # Retry for incomplete data
-            await process_url_wrapper(url)
         await browser.close()
 
 async def process_urls():
@@ -360,7 +329,10 @@ async def process_urls():
 
     ensure_storage_state()
 
-    await pre_login()  # Perform the login before processing URLs
+    context = await login_and_get_context()
+    if not context:
+        app_logger.error('Login failed. Exiting process.')
+        return
 
     with progress_lock:
         progress["total"] = len(urls_data)
@@ -368,23 +340,40 @@ async def process_urls():
     app_logger.info(f"Total URLs to process: {progress['total']}")
     update_last_run_time()
 
+    first_url = urls_data[0]
+    await process_url_wrapper(first_url)  # Process the first URL to validate
+
     tasks = []
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    failed_urls = []
+    with ThreadPoolExecutor(max_workers=5) as executor:
         loop = asyncio.get_event_loop()
-        for url in urls_data:
-            if stop_flag:
-                break
-            while pause_flag:
-                await asyncio.sleep(1)
-            with progress_lock:
-                progress["currentUrl"] = url
-                progress["current"] += 1
-            tasks.append(loop.run_in_executor(executor, asyncio.run, process_url_wrapper(url)))
-        await asyncio.gather(*tasks)
+        futures = {executor.submit(asyncio.run, process_url_wrapper(url)): url for url in urls_data[1:]}  # Start from the second URL
+
+        for future in as_completed(futures):
+            url = futures[future]
+            try:
+                data = future.result()
+                if data:
+                    with progress_lock:
+                        progress["current"] += 1
+            except Exception as e:
+                app_logger.error(f"Failed to process URL: {url}")
+                failed_urls.append(url)
 
     with progress_lock:
         progress["currentUrl"] = "N/A"
         progress["lastStore"] = "N/A"
+    
+    if failed_urls:
+        app_logger.info(f"Retrying {len(failed_urls)} failed URLs...")
+        stop_flag = False
+        for url in failed_urls:
+            if stop_flag:
+                break
+            while pause_flag:
+                await asyncio.sleep(1)
+            await process_url_wrapper(url)
+    
     update_next_run_time()
 
 @app.route('/')
@@ -423,7 +412,6 @@ async def clear_log():
         return jsonify(status="Log cleared")
     except Exception as e:
         app_logger.error("Failed to clear the log file.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify(status="Error clearing log")
 
 @app.route('/progress_status')
@@ -445,7 +433,6 @@ async def progress_status():
         except Exception as e:
             formatted_log = "N/A"
             app_logger.error("Failed to read the log file for progress status.")
-            debug_logger.debug(traceback.format_exc())
 
     return jsonify(progress=progress, percentage=percentage, latestLog=formatted_log)
 
@@ -465,7 +452,6 @@ async def log_status():
         return jsonify(logs=formatted_logs)
     except Exception as e:
         app_logger.error("Failed to read the log file.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify(logs=[])
 
 @app.route('/stats')
@@ -497,7 +483,6 @@ async def toggle_schedule(job_id):
             return jsonify(success=False, error="Job not found")
     except Exception as e:
         app_logger.error("Failed to toggle schedule.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify(success=False, error=str(e))
 
 @app.route('/delete_schedule/<job_id>', methods=['POST'])
@@ -508,7 +493,6 @@ async def delete_schedule(job_id):
         return jsonify(success=True)
     except Exception as e:
         app_logger.error("Failed to delete schedule.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify(success=False, error=str(e))
 
 @app.route('/toggle_repeat_daily/<job_id>', methods=['POST'])
@@ -530,7 +514,6 @@ async def toggle_repeat_daily(job_id):
             return jsonify(success=False, error="Job not found")
     except Exception as e:
         app_logger.error("Failed to toggle repeat daily status.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify(success=False, error=str(e))
 
 @app.route('/get_otp', methods=['GET'])
@@ -541,9 +524,10 @@ async def get_otp():
 @app.route('/sms', methods=['POST'])
 async def receive_sms():
     global otp
-    sms_content = request.form.get('sms', '')
+    sms_content = await request.form
+    sms = sms_content.get('sms', '')
 
-    match = re.search(otp_pattern, sms_content)
+    match = re.search(otp_pattern, sms)
     if match:
         otp = match.group(1)
         app_logger.info(f"Extracted OTP: {otp}")
@@ -578,7 +562,11 @@ async def download_logs():
     memory_file.write(output.getvalue().encode('utf-8'))
     memory_file.seek(0)
 
-    return await send_file(memory_file, mimetype='text/csv', download_name='logs.csv', as_attachment=True)
+    headers = {
+        'Content-Disposition': 'attachment; filename=logs.csv'
+    }
+
+    return Response(memory_file.read(), mimetype='text/csv', headers=headers)
 
 @app.route('/api/logs/summary', methods=['GET'])
 async def get_logs_summary():
@@ -642,10 +630,10 @@ def read_submission_logs():
             if os.path.exists(LOG_FILE):
                 with open(LOG_FILE, 'r') as csvfile:
                     reader = csv.DictReader(csvfile)
-                    logs = list(reader)
+                    for row in reader:
+                        logs.append(row)
     except FileNotFoundError:
         app_logger.error("Submission log file not found.")
-        debug_logger.debug(traceback.format_exc())
     return logs
 
 def save_schedules():
@@ -698,7 +686,6 @@ async def edit_schedule(id):
         return jsonify({'success': True, 'message': 'Schedule updated successfully'})
     except Exception as e:
         app.logger.error("Failed to update schedule.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify({'success': False, 'message': 'Internal server error'}), 500
 
 @app.route('/add_schedule', methods=['POST'])
@@ -720,7 +707,6 @@ async def add_schedule():
         return jsonify({'success': True, 'message': 'Schedule added successfully'})
     except Exception as e:
         app.logger.error("Failed to add schedule.")
-        debug_logger.debug(traceback.format_exc())
         return jsonify({'success': False, 'message': 'Internal server error'}), 500
 
 @app.route('/schedules', methods=['GET'])

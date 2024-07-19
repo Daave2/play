@@ -1,4 +1,4 @@
-#!/Users/nikicooke/code/inf/venv/bin/python
+#!/Users/nikicooke/code/play/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

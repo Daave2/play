@@ -1,0 +1,4 @@
+playwright==1.19.0
+requests==2.26.0
+quart==0.15.1
+apscheduler==3.7.0
