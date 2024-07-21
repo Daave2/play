@@ -345,7 +345,7 @@ async def process_urls():
 
     tasks = []
     failed_urls = []
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=15) as executor:
         loop = asyncio.get_event_loop()
         futures = {executor.submit(asyncio.run, process_url_wrapper(url)): url for url in urls_data[1:]}  # Start from the second URL
 

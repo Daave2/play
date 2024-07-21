@@ -1,105 +1,3010 @@
-2024-07-19 09:08:37,797 INFO 99 URLs loaded from urls.csv
-2024-07-19 09:08:41,962 INFO Waiting for OTP to be received...
-2024-07-19 09:09:16,716 INFO Total URLs to process: 99
-2024-07-19 09:09:26,732 INFO 09:09 Morrisons Aberdeen submitted (Orders 70, Units 1732, Fulfilled 1723, UPH 82, INF 1.3 %, Found 98.7 %, Cancelled 2, Lates 0 %, Time available: 27:28)
-2024-07-19 09:09:39,930 INFO 09:09 Glenrothes submitted (Orders 44, Units 1054, Fulfilled 1045, UPH 69, INF 1.7 %, Found 98.3 %, Cancelled 0, Lates 6.7 %, Time available: 18:21)
-2024-07-19 09:09:41,676 INFO 09:09 Morrisons Gyle submitted (Orders 339, Units 8990, Fulfilled 8833, UPH 85, INF 2.6 %, Found 97.4 %, Cancelled 12, Lates 3.2 %, Time available: 122:12)
-2024-07-19 09:09:43,632 ERROR Failed to process URL. Please check the website availability and layout.
-2024-07-19 09:09:43,632 ERROR Failed to process URL. Please check the website availability and layout.
-2024-07-19 09:09:43,637 ERROR Failed to process URL. Please check the website availability and layout.
-2024-07-19 09:09:54,210 INFO 09:09 Morrisons Anniesland submitted (Orders 423, Units 9920, Fulfilled 9783, UPH 79, INF 2.8 %, Found 97.2 %, Cancelled 14, Lates 1.6 %, Time available: 154:59)
-2024-07-19 09:09:56,091 INFO 09:09 Morrisons Dundee submitted (Orders 33, Units 671, Fulfilled 668, UPH 94, INF 0.4 %, Found 99.6 %, Cancelled 1, Lates 15.6 %, Time available: 10:59)
-2024-07-19 09:09:58,013 INFO 09:09 Morrisons Aberdeen submitted (Orders 70, Units 1732, Fulfilled 1723, UPH 82, INF 1.3 %, Found 98.7 %, Cancelled 2, Lates 0 %, Time available: 27:28)
-2024-07-19 09:09:58,152 INFO 09:09 Morrisons Stirling submitted (Orders 104, Units 2751, Fulfilled 2728, UPH 87, INF 1.7 %, Found 98.3 %, Cancelled 5, Lates 1.1 %, Time available: 43:08)
-2024-07-19 09:10:01,220 INFO 09:10 Cardonald Morrisons submitted (Orders 273, Units 6707, Fulfilled 6567, UPH 73, INF 3.3 %, Found 96.7 %, Cancelled 27, Lates 37.6 %, Time available: 108:06)
-2024-07-19 09:10:07,734 INFO 09:10 Morrisons Stevenson submitted (Orders 91, Units 2412, Fulfilled 2353, UPH 90, INF 2.9 %, Found 97.1 %, Cancelled 5, Lates 0 %, Time available: 34:35)
-2024-07-19 09:10:12,483 INFO 09:10 Morrisons Auckland submitted (Orders 41, Units 1135, Fulfilled 1126, UPH 89, INF 1.5 %, Found 98.5 %, Cancelled 4, Lates 0 %, Time available: 16:38)
-2024-07-19 09:10:13,973 INFO 09:10 Morrisons Boroughbridge submitted (Orders 33, Units 924, Fulfilled 918, UPH 79, INF 2.4 %, Found 97.6 %, Cancelled 1, Lates 0 %, Time available: 13:31)
-2024-07-19 09:10:15,574 INFO 09:10 Byker Morrisons submitted (Orders 377, Units 9374, Fulfilled 9285, UPH 88, INF 1.7 %, Found 98.3 %, Cancelled 6, Lates 0.2 %, Time available: 246:13)
-2024-07-19 09:10:18,087 INFO 09:10 Jarrow Morrisons submitted (Orders 204, Units 5227, Fulfilled 5173, UPH 68, INF 2.0 %, Found 98.0 %, Cancelled 3, Lates 0 %, Time available: 117:11)
-2024-07-19 09:10:24,691 INFO 09:10 Morrisons Middlesbrough submitted (Orders 146, Units 3773, Fulfilled 3754, UPH 90, INF 1.4 %, Found 98.6 %, Cancelled 4, Lates 2.0 %, Time available: 51:40)
-2024-07-19 09:10:29,757 INFO 09:10 Eccles Morrisons submitted (Orders 248, Units 5981, Fulfilled 5900, UPH 83, INF 2.6 %, Found 97.4 %, Cancelled 4, Lates 3.5 %, Time available: 81:53)
-2024-07-19 09:10:34,540 INFO 09:10 Morrisons Nelson submitted (Orders 33, Units 880, Fulfilled 877, UPH 78, INF 1.1 %, Found 98.9 %, Cancelled 1, Lates 0 %, Time available: 18:37)
-2024-07-19 09:10:34,827 INFO 09:10 Morrison Preston - Riversway submitted (Orders 103, Units 2772, Fulfilled 2699, UPH 77, INF 3.9 %, Found 96.1 %, Cancelled 3, Lates 3.6 %, Time available: 42:38)
-2024-07-19 09:10:37,293 INFO 09:10 Reddish Morrisons submitted (Orders 259, Units 6405, Fulfilled 6309, UPH 73, INF 2.6 %, Found 97.4 %, Cancelled 8, Lates 4.3 %, Time available: 100:01)
-2024-07-19 09:10:42,381 INFO 09:10 Morrisons Stoke submitted (Orders 283, Units 7631, Fulfilled 7574, UPH 86, INF 1.8 %, Found 98.2 %, Cancelled 5, Lates 1.9 %, Time available: 102:03)
-2024-07-19 09:10:44,773 INFO 09:10 Morrisons Winsford submitted (Orders 85, Units 2211, Fulfilled 2196, UPH 96, INF 1.7 %, Found 98.3 %, Cancelled 7, Lates 1.1 %, Time available: 25:44)
-2024-07-19 09:10:50,415 INFO 09:10 Morrisons Connahs Quay submitted (Orders 164, Units 4489, Fulfilled 4425, UPH 69, INF 3.0 %, Found 97.0 %, Cancelled 2, Lates 2.3 %, Time available: 75:20)
-2024-07-19 09:10:50,980 INFO 09:10 Morrisons Rhyl submitted (Orders 21, Units 574, Fulfilled 574, UPH 107, INF 0.3 %, Found 99.7 %, Cancelled 2, Lates 0 %, Time available: 09:23)
-2024-07-19 09:10:57,252 INFO 09:10 Belle Vale Morrisons submitted (Orders 259, Units 6748, Fulfilled 6611, UPH 77, INF 3.6 %, Found 96.4 %, Cancelled 5, Lates 1.0 %, Time available: 102:06)
-2024-07-19 09:10:58,150 INFO 09:10 St Helens Morrisons submitted (Orders 360, Units 9064, Fulfilled 8980, UPH 78, INF 1.8 %, Found 98.2 %, Cancelled 12, Lates 0.3 %, Time available: 139:14)
-2024-07-19 09:10:59,228 INFO 09:10 Morrisons Thornton Cleveleys submitted (Orders 106, Units 2754, Fulfilled 2714, UPH 57, INF 3.2 %, Found 96.8 %, Cancelled 3, Lates 0 %, Time available: 58:03)
-2024-07-19 09:11:05,870 INFO 09:11 Morrisons Wrexham submitted (Orders 37, Units 1041, Fulfilled 1030, UPH 79, INF 2.0 %, Found 98.0 %, Cancelled 0, Lates 5.1 %, Time available: 18:13)
-2024-07-19 09:11:06,594 INFO 09:11 Morrisons Wellington submitted (Orders 56, Units 1493, Fulfilled 1484, UPH 87, INF 1.4 %, Found 98.6 %, Cancelled 2, Lates 0 %, Time available: 21:54)
-2024-07-19 09:11:13,505 INFO 09:11 Morrisons Halifax submitted (Orders 256, Units 6827, Fulfilled 6682, UPH 72, INF 3.9 %, Found 96.1 %, Cancelled 9, Lates 4.1 %, Time available: 113:11)
-2024-07-19 09:11:14,035 INFO 09:11 Hunslet Morrisons submitted (Orders 396, Units 9850, Fulfilled 9581, UPH 83, INF 3.4 %, Found 96.6 %, Cancelled 15, Lates 27.2 %, Time available: 138:04)
-2024-07-19 09:11:14,350 INFO 09:11 Thornbury Morrisons submitted (Orders 122, Units 3342, Fulfilled 3288, UPH 79, INF 2.5 %, Found 97.5 %, Cancelled 3, Lates 0 %, Time available: 56:26)
-2024-07-19 09:11:21,012 INFO 09:11 Morrisons Staveley submitted (Orders 200, Units 5685, Fulfilled 5621, UPH 80, INF 1.9 %, Found 98.1 %, Cancelled 9, Lates 2.3 %, Time available: 94:32)
-2024-07-19 09:11:22,053 INFO 09:11 Catcliffe Morrisons submitted (Orders 382, Units 9765, Fulfilled 9616, UPH 84, INF 2.8 %, Found 97.2 %, Cancelled 6, Lates 3.8 %, Time available: 184:07)
-2024-07-19 09:11:28,295 INFO 09:11 Morrisons York submitted (Orders 73, Units 1905, Fulfilled 1889, UPH 90, INF 2.1 %, Found 97.9 %, Cancelled 1, Lates 0 %, Time available: 27:14)
-2024-07-19 09:11:29,073 INFO 09:11 Morrisons Analby submitted (Orders 125, Units 3436, Fulfilled 3402, UPH 99, INF 1.9 %, Found 98.1 %, Cancelled 3, Lates 7.3 %, Time available: 36:54)
-2024-07-19 09:11:29,825 INFO 09:11 Morrisons Cleethorpes submitted (Orders 42, Units 1073, Fulfilled 1060, UPH 104, INF 1.5 %, Found 98.5 %, Cancelled 4, Lates 15.0 %, Time available: 14:22)
-2024-07-19 09:11:35,105 INFO 09:11 Morrisons Lincoln submitted (Orders 59, Units 1648, Fulfilled 1639, UPH 88, INF 0.8 %, Found 99.2 %, Cancelled 1, Lates 0 %, Time available: 28:00)
-2024-07-19 09:11:36,486 INFO 09:11 Morrisons Newark submitted (Orders 45, Units 1252, Fulfilled 1243, UPH 85, INF 1.3 %, Found 98.7 %, Cancelled 0, Lates 0 %, Time available: 19:38)
-2024-07-19 09:11:46,352 INFO 09:11 Morrisons Binley submitted (Orders 271, Units 7601, Fulfilled 7518, UPH 76, INF 1.6 %, Found 98.4 %, Cancelled 12, Lates 1.8 %, Time available: 113:34)
-2024-07-19 09:11:46,688 INFO 09:11 Morrisons Bromsgrove submitted (Orders 209, Units 6032, Fulfilled 5981, UPH 83, INF 1.9 %, Found 98.1 %, Cancelled 6, Lates 1.5 %, Time available: 96:13)
-2024-07-19 09:11:46,840 INFO 09:11 Morrisons Bulwell submitted (Orders 287, Units 7870, Fulfilled 7842, UPH 93, INF 0.8 %, Found 99.2 %, Cancelled 5, Lates 2.2 %, Time available: 112:17)
-2024-07-19 09:11:48,699 INFO 09:11 Morrisons Coalville submitted (Orders 72, Units 2019, Fulfilled 1990, UPH 103, INF 2.1 %, Found 97.9 %, Cancelled 2, Lates 0 %, Time available: 34:03)
-2024-07-19 09:11:53,573 INFO 09:11 Morrisons Derby submitted (Orders 220, Units 6049, Fulfilled 6000, UPH 85, INF 1.6 %, Found 98.4 %, Cancelled 7, Lates 16.5 %, Time available: 88:35)
-2024-07-19 09:12:01,948 INFO 09:12 Morrisons Leicester submitted (Orders 184, Units 4537, Fulfilled 4487, UPH 69, INF 1.7 %, Found 98.3 %, Cancelled 5, Lates 0.7 %, Time available: 81:10)
-2024-07-19 09:12:02,862 INFO 09:12 Sheldon Morrisons submitted (Orders 258, Units 6665, Fulfilled 6572, UPH 90, INF 1.8 %, Found 98.2 %, Cancelled 6, Lates 0 %, Time available: 98:54)
-2024-07-19 09:12:04,552 INFO 09:12 Morrisons Baglan Moor submitted (Orders 282, Units 8202, Fulfilled 8085, UPH 85, INF 3.0 %, Found 97.0 %, Cancelled 9, Lates 2.8 %, Time available: 109:43)
-2024-07-19 09:12:06,997 INFO 09:12 Walsall Morrisons submitted (Orders 407, Units 10634, Fulfilled 10487, UPH 79, INF 2.3 %, Found 97.7 %, Cancelled 22, Lates 7.7 %, Time available: 162:03)
-2024-07-19 09:12:07,316 INFO 09:12 Morrisons Bristol submitted (Orders 205, Units 5301, Fulfilled 5250, UPH 78, INF 1.6 %, Found 98.4 %, Cancelled 10, Lates 0 %, Time available: 93:15)
-2024-07-19 09:12:17,209 INFO 09:12 Morrisons Cardiff Tygals submitted (Orders 258, Units 6860, Fulfilled 6751, UPH 78, INF 3.1 %, Found 96.9 %, Cancelled 8, Lates 1.8 %, Time available: 108:20)
-2024-07-19 09:12:19,461 INFO 09:12 Morrisons Chippenham submitted (Orders 49, Units 1354, Fulfilled 1343, UPH 94, INF 1.6 %, Found 98.4 %, Cancelled 0, Lates 0 %, Time available: 17:59)
-2024-07-19 09:12:20,061 INFO 09:12 Morrisons Ebbw Vale submitted (Orders 24, Units 606, Fulfilled 592, UPH 80, INF 2.6 %, Found 97.4 %, Cancelled 3, Lates 0 %, Time available: 09:16)
-2024-07-19 09:12:20,741 INFO 09:12 Morrisons Newport submitted (Orders 36, Units 1020, Fulfilled 1010, UPH 77, INF 2.5 %, Found 97.5 %, Cancelled 0, Lates 0 %, Time available: 20:08)
-2024-07-19 09:12:21,445 INFO 09:12 Morrisons Gloucester submitted (Orders 119, Units 2981, Fulfilled 2927, UPH 65, INF 3.8 %, Found 96.2 %, Cancelled 3, Lates 0 %, Time available: 61:57)
-2024-07-19 09:12:33,674 INFO 09:12 Morrisons Basingstoke submitted (Orders 68, Units 2026, Fulfilled 2011, UPH 75, INF 1.9 %, Found 98.1 %, Cancelled 1, Lates 4.7 %, Time available: 33:48)
-2024-07-19 09:12:35,153 INFO 09:12 Morrisons Banbury submitted (Orders 56, Units 1461, Fulfilled 1441, UPH 71, INF 2.6 %, Found 97.4 %, Cancelled 2, Lates 0 %, Time available: 38:04)
-2024-07-19 09:12:36,019 INFO 09:12 Morrisons Bedford submitted (Orders 95, Units 2446, Fulfilled 2428, UPH 87, INF 1.4 %, Found 98.6 %, Cancelled 3, Lates 3.1 %, Time available: 35:45)
-2024-07-19 09:12:37,448 INFO 09:12 Morrisons Cambourne submitted (Orders 119, Units 3240, Fulfilled 3177, UPH 80, INF 4.1 %, Found 95.9 %, Cancelled 5, Lates 2.6 %, Time available: 45:30)
-2024-07-19 09:12:38,032 INFO 09:12 Morrisons Corby submitted (Orders 43, Units 1133, Fulfilled 1128, UPH 80, INF 1.3 %, Found 98.7 %, Cancelled 2, Lates 0 %, Time available: 16:00)
-2024-07-19 09:12:47,690 INFO 09:12 Morrisons High Wycombe submitted (Orders 77, Units 1944, Fulfilled 1933, UPH 73, INF 1.7 %, Found 98.3 %, Cancelled 2, Lates 0 %, Time available: 35:54)
-2024-07-19 09:12:51,529 INFO 09:12 Morrisons Northampton submitted (Orders 195, Units 5635, Fulfilled 5589, UPH 75, INF 1.4 %, Found 98.6 %, Cancelled 8, Lates 0 %, Time available: 93:38)
-2024-07-19 09:12:52,257 INFO 09:12 Morrisons Milton Keynes submitted (Orders 244, Units 6433, Fulfilled 6327, UPH 69, INF 3.0 %, Found 97.0 %, Cancelled 4, Lates 11.3 %, Time available: 118:38)
-2024-07-19 09:12:52,393 INFO 09:12 Morrisons Peterborough submitted (Orders 119, Units 2694, Fulfilled 2653, UPH 84, INF 3.2 %, Found 96.8 %, Cancelled 2, Lates 0 %, Time available: 40:07)
-2024-07-19 09:12:53,474 INFO 09:12 Morrisons Reading submitted (Orders 107, Units 3135, Fulfilled 3096, UPH 64, INF 2.2 %, Found 97.8 %, Cancelled 3, Lates 0 %, Time available: 65:05)
-2024-07-19 09:13:00,313 INFO 09:13 Morrisons Swindon submitted (Orders 96, Units 2598, Fulfilled 2569, UPH 98, INF 2.2 %, Found 97.8 %, Cancelled 7, Lates 11.3 %, Time available: 29:17)
-2024-07-19 09:13:04,569 INFO 09:13 Watford Morrisons submitted (Orders 156, Units 4024, Fulfilled 3847, UPH 71, INF 5.9 %, Found 94.1 %, Cancelled 1, Lates 0 %, Time available: 72:58)
-2024-07-19 09:13:07,542 INFO 09:13 Morrisons Welwyn submitted (Orders 271, Units 6827, Fulfilled 6704, UPH 86, INF 3.1 %, Found 96.9 %, Cancelled 4, Lates 0 %, Time available: 96:20)
-2024-07-19 09:13:07,744 INFO 09:13 Weybridge Morrisons submitted (Orders 181, Units 4451, Fulfilled 4355, UPH 75, INF 2.5 %, Found 97.5 %, Cancelled 3, Lates 1.1 %, Time available: 77:00)
-2024-07-19 09:13:08,267 INFO 09:13 Woking Morrisons submitted (Orders 281, Units 7924, Fulfilled 7813, UPH 78, INF 2.1 %, Found 97.9 %, Cancelled 9, Lates 0.3 %, Time available: 126:01)
-2024-07-19 09:13:14,376 INFO 09:13 Morrisons Canvey Island submitted (Orders 181, Units 5291, Fulfilled 5215, UPH 93, INF 2.4 %, Found 97.6 %, Cancelled 9, Lates 0 %, Time available: 71:03)
-2024-07-19 09:13:17,237 INFO 09:13 Morrisons Gorleston submitted (Orders 10, Units 246, Fulfilled 246, UPH 83, INF 0 %, Found 100 %, Cancelled 0, Lates 0 %, Time available: 04:02)
-2024-07-19 09:13:22,026 INFO 09:13 Morrisons Norwich submitted (Orders 91, Units 2635, Fulfilled 2584, UPH 85, INF 2.7 %, Found 97.3 %, Cancelled 3, Lates 0 %, Time available: 34:06)
-2024-07-19 09:13:22,473 INFO 09:13 Morrisons Wisbech submitted (Orders 42, Units 985, Fulfilled 983, UPH 106, INF 1.3 %, Found 98.7 %, Cancelled 4, Lates 7.0 %, Time available: 10:47)
-2024-07-19 09:13:22,506 INFO 09:13 Morrisons Ipswich submitted (Orders 77, Units 2174, Fulfilled 2153, UPH 81, INF 1.5 %, Found 98.5 %, Cancelled 5, Lates 0 %, Time available: 44:36)
-2024-07-19 09:13:28,714 INFO 09:13 Morrisons Witham submitted (Orders 64, Units 1725, Fulfilled 1702, UPH 79, INF 2.4 %, Found 97.6 %, Cancelled 5, Lates 7.7 %, Time available: 28:07)
-2024-07-19 09:13:30,285 INFO 09:13 Acton Morrisons submitted (Orders 302, Units 7256, Fulfilled 7104, UPH 85, INF 2.6 %, Found 97.4 %, Cancelled 8, Lates 5.0 %, Time available: 128:00)
-2024-07-19 09:13:36,688 INFO 09:13 Morrisons Canning Town submitted (Orders 144, Units 3322, Fulfilled 3210, UPH 85, INF 4.5 %, Found 95.5 %, Cancelled 5, Lates 0 %, Time available: 56:50)
-2024-07-19 09:13:37,302 INFO 09:13 Morrisons Becontree Heath submitted (Orders 115, Units 3025, Fulfilled 2975, UPH 96, INF 3.0 %, Found 97.0 %, Cancelled 2, Lates 3.1 %, Time available: 42:05)
-2024-07-19 09:13:38,005 INFO 09:13 Morrisons Chingford submitted (Orders 289, Units 6762, Fulfilled 6645, UPH 78, INF 2.7 %, Found 97.3 %, Cancelled 4, Lates 5.0 %, Time available: 108:15)
-2024-07-19 09:13:43,829 INFO 09:13 Croydon Morrisons submitted (Orders 335, Units 8742, Fulfilled 8502, UPH 72, INF 4.7 %, Found 95.3 %, Cancelled 9, Lates 0.3 %, Time available: 149:04)
-2024-07-19 09:13:44,970 INFO 09:13 Morrisons Harrow - Trident Point submitted (Orders 123, Units 3197, Fulfilled 3165, UPH 92, INF 1.4 %, Found 98.6 %, Cancelled 5, Lates 0 %, Time available: 45:49)
-2024-07-19 09:13:51,307 INFO 09:13 Queensbury Morrisons submitted (Orders 195, Units 4674, Fulfilled 4433, UPH 69, INF 6.2 %, Found 93.8 %, Cancelled 2, Lates 0 %, Time available: 104:43)
-2024-07-19 09:13:51,900 INFO 09:13 Peckham Morrisons submitted (Orders 189, Units 5136, Fulfilled 5045, UPH 82, INF 2.9 %, Found 97.1 %, Cancelled 7, Lates 0 %, Time available: 87:43)
-2024-07-19 09:13:53,644 INFO 09:13 Stratford Morrisons submitted (Orders 230, Units 5528, Fulfilled 5420, UPH 68, INF 2.8 %, Found 97.2 %, Cancelled 8, Lates 0.7 %, Time available: 105:50)
-2024-07-19 09:13:58,546 INFO 09:13 Morrisons Canterbury submitted (Orders 66, Units 1697, Fulfilled 1680, UPH 80, INF 2.1 %, Found 97.9 %, Cancelled 1, Lates 0 %, Time available: 26:57)
-2024-07-19 09:13:59,121 INFO 09:13 Morrisons Welling submitted (Orders 192, Units 5215, Fulfilled 5170, UPH 93, INF 1.8 %, Found 98.2 %, Cancelled 4, Lates 1.3 %, Time available: 68:06)
-2024-07-19 09:14:06,568 INFO 09:14 Morrisons Eastbourne submitted (Orders 58, Units 1766, Fulfilled 1755, UPH 88, INF 1.0 %, Found 99.0 %, Cancelled 3, Lates 7.6 %, Time available: 25:17)
-2024-07-19 09:14:07,429 INFO 09:14 Morrisons Gravesend submitted (Orders 236, Units 6372, Fulfilled 6225, UPH 74, INF 4.1 %, Found 95.9 %, Cancelled 10, Lates 0.6 %, Time available: 108:51)
-2024-07-19 09:14:08,991 INFO 09:14 Morrisons Maidstone submitted (Orders 46, Units 1091, Fulfilled 1086, UPH 75, INF 0.9 %, Found 99.1 %, Cancelled 2, Lates 0 %, Time available: 17:09)
-2024-07-19 09:14:13,741 INFO 09:14 Morrisons Oxted submitted (Orders 63, Units 1465, Fulfilled 1435, UPH 78, INF 2.7 %, Found 97.3 %, Cancelled 7, Lates 0 %, Time available: 22:58)
-2024-07-19 09:14:14,465 INFO 09:14 Portsmouth Morrisons submitted (Orders 418, Units 11120, Fulfilled 11001, UPH 80, INF 2.2 %, Found 97.8 %, Cancelled 11, Lates 5.9 %, Time available: 165:22)
-2024-07-19 09:14:20,585 INFO 09:14 Morrisons Worthing submitted (Orders 145, Units 3941, Fulfilled 3850, UPH 85, INF 3.7 %, Found 96.3 %, Cancelled 5, Lates 5.4 %, Time available: 55:28)
-2024-07-19 09:14:22,431 INFO 09:14 Morrisons Exeter submitted (Orders 43, Units 1128, Fulfilled 1104, UPH 72, INF 3.5 %, Found 96.5 %, Cancelled 0, Lates 8.6 %, Time available: 20:48)
-2024-07-19 09:14:24,267 INFO 09:14 Morrisons Plymouth submitted (Orders 136, Units 3489, Fulfilled 3435, UPH 81, INF 3.7 %, Found 96.3 %, Cancelled 3, Lates 4.4 %, Time available: 51:37)
-2024-07-19 09:14:27,700 INFO 09:14 Morrisons Redruth submitted (Orders 17, Units 434, Fulfilled 428, UPH 85, INF 2.8 %, Found 97.2 %, Cancelled 0, Lates 0 %, Time available: 08:14)
-2024-07-19 09:14:27,870 INFO 09:14 Morrisons Taunton submitted (Orders 23, Units 499, Fulfilled 490, UPH 100, INF 2.0 %, Found 98.0 %, Cancelled 3, Lates 0 %, Time available: 09:16)
-2024-07-19 09:14:34,319 INFO 09:14 Morrisons Totnes submitted (Orders 42, Units 1028, Fulfilled 1002, UPH 101, INF 5.3 %, Found 94.7 %, Cancelled 6, Lates 0 %, Time available: 12:03)
-2024-07-19 09:14:35,278 INFO 09:14 Morrisons Totton submitted (Orders 75, Units 1748, Fulfilled 1716, UPH 89, INF 2.8 %, Found 97.2 %, Cancelled 2, Lates 0 %, Time available: 25:22)
-2024-07-19 09:14:39,174 INFO 09:14 Morrisons Warminster submitted (Orders 23, Units 584, Fulfilled 582, UPH 87, INF 0.5 %, Found 99.5 %, Cancelled 5, Lates 0 %, Time available: 11:43)
-2024-07-19 09:14:40,926 INFO 09:14 Morrisons Verwood submitted (Orders 28, Units 530, Fulfilled 529, UPH 72, INF 0.6 %, Found 99.4 %, Cancelled 1, Lates 0 %, Time available: 15:28)
-2024-07-19 09:14:41,054 INFO 09:14 Morrisons Weston Super Mare submitted (Orders 60, Units 1697, Fulfilled 1691, UPH 83, INF 0.9 %, Found 99.1 %, Cancelled 3, Lates 0 %, Time available: 33:58)
+2024-07-21 15:34:23,503 INFO 99 URLs loaded from urls.csv
+2024-07-21 15:34:28,158 INFO Waiting for OTP to be received...
+2024-07-21 15:35:01,170 INFO Total URLs to process: 99
+2024-07-21 15:35:13,718 INFO 15:35 Morrisons Aberdeen submitted (Orders 148, Units 3909, Fulfilled 3870, UPH 80, INF 2.0 %, Found 98.0 %, Cancelled 4, Lates 0 %, Time available: 54:46)
+2024-07-21 15:35:45,131 INFO 15:35 Morrisons Stirling submitted (Orders 193, Units 5667, Fulfilled 5613, UPH 84, INF 1.6 %, Found 98.4 %, Cancelled 4, Lates 4.6 %, Time available: 77:17)
+2024-07-21 15:35:46,198 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:47,709 INFO 15:35 Morrisons Boroughbridge submitted (Orders 63, Units 1555, Fulfilled 1546, UPH 84, INF 2.4 %, Found 97.6 %, Cancelled 5, Lates 4.8 %, Time available: 21:00)
+2024-07-21 15:35:48,212 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:48,350 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:48,576 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:48,691 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:48,980 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:48,982 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:35:51,300 INFO 15:35 Eccles Morrisons submitted (Orders 461, Units 13065, Fulfilled 12873, UPH 82, INF 2.7 %, Found 97.3 %, Cancelled 8, Lates 18.0 %, Time available: 166:54)
+2024-07-21 15:35:51,751 INFO 15:35 Cardonald Morrisons submitted (Orders 481, Units 12134, Fulfilled 11979, UPH 81, INF 2.7 %, Found 97.3 %, Cancelled 12, Lates 13.3 %, Time available: 173:59)
+2024-07-21 15:35:52,540 INFO 15:35 Morrisons Middlesbrough submitted (Orders 276, Units 7879, Fulfilled 7797, UPH 92, INF 2.0 %, Found 98.0 %, Cancelled 5, Lates 0 %, Time available: 102:02)
+2024-07-21 15:35:54,903 INFO 15:35 Morrisons Dundee submitted (Orders 68, Units 1690, Fulfilled 1657, UPH 78, INF 2.8 %, Found 97.2 %, Cancelled 1, Lates 13.8 %, Time available: 28:02)
+2024-07-21 15:35:55,312 INFO 15:35 Morrisons Nelson submitted (Orders 59, Units 1837, Fulfilled 1829, UPH 82, INF 0.8 %, Found 99.2 %, Cancelled 1, Lates 0 %, Time available: 32:59)
+2024-07-21 15:35:55,369 INFO 15:35 Byker Morrisons submitted (Orders 727, Units 19029, Fulfilled 18831, UPH 86, INF 2.1 %, Found 97.9 %, Cancelled 10, Lates 1.2 %, Time available: 311:54)
+2024-07-21 15:36:07,508 INFO 15:36 Jarrow Morrisons submitted (Orders 395, Units 10341, Fulfilled 10258, UPH 72, INF 2.0 %, Found 98.0 %, Cancelled 8, Lates 0.5 %, Time available: 186:10)
+2024-07-21 15:36:08,052 INFO 15:36 Glenrothes submitted (Orders 79, Units 2219, Fulfilled 2188, UPH 74, INF 2.5 %, Found 97.5 %, Cancelled 1, Lates 5.6 %, Time available: 39:50)
+2024-07-21 15:36:08,225 INFO 15:36 Morrisons Auckland submitted (Orders 79, Units 1972, Fulfilled 1955, UPH 81, INF 1.8 %, Found 98.2 %, Cancelled 4, Lates 4.5 %, Time available: 29:17)
+2024-07-21 15:36:09,481 INFO 15:36 Morrisons Stevenson submitted (Orders 148, Units 3890, Fulfilled 3830, UPH 89, INF 2.1 %, Found 97.9 %, Cancelled 0, Lates 2.9 %, Time available: 47:07)
+2024-07-21 15:36:10,534 INFO 15:36 Morrisons Gyle submitted (Orders 536, Units 14819, Fulfilled 14689, UPH 85, INF 1.6 %, Found 98.4 %, Cancelled 12, Lates 3.5 %, Time available: 196:09)
+2024-07-21 15:36:10,981 INFO 15:36 Morrisons Aberdeen submitted (Orders 148, Units 3926, Fulfilled 3887, UPH 80, INF 2.0 %, Found 98.0 %, Cancelled 4, Lates 0 %, Time available: 54:46)
+2024-07-21 15:36:11,628 INFO 15:36 Morrisons Anniesland submitted (Orders 674, Units 17235, Fulfilled 17013, UPH 82, INF 2.2 %, Found 97.8 %, Cancelled 14, Lates 3.3 %, Time available: 246:56)
+2024-07-21 15:36:26,267 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:27,911 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:44,523 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:44,666 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:44,689 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:44,828 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:44,861 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:45,800 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:36:50,180 INFO 15:36 St Helens Morrisons submitted (Orders 621, Units 16776, Fulfilled 16596, UPH 75, INF 2.3 %, Found 97.7 %, Cancelled 10, Lates 2.1 %, Time available: 254:58)
+2024-07-21 15:36:51,939 INFO 15:36 Morrisons Wellington submitted (Orders 98, Units 2937, Fulfilled 2886, UPH 77, INF 2.4 %, Found 97.6 %, Cancelled 1, Lates 1.3 %, Time available: 50:29)
+2024-07-21 15:36:52,249 INFO 15:36 Morrisons Thornton Cleveleys submitted (Orders 188, Units 5036, Fulfilled 4945, UPH 59, INF 3.9 %, Found 96.1 %, Cancelled 1, Lates 0 %, Time available: 90:43)
+2024-07-21 15:36:53,069 INFO 15:36 Thornbury Morrisons submitted (Orders 193, Units 5425, Fulfilled 5300, UPH 77, INF 3.6 %, Found 96.4 %, Cancelled 6, Lates 13.4 %, Time available: 84:15)
+2024-07-21 15:36:53,480 INFO 15:36 Morrisons Winsford submitted (Orders 157, Units 4946, Fulfilled 4908, UPH 90, INF 2.0 %, Found 98.0 %, Cancelled 5, Lates 4.3 %, Time available: 63:00)
+2024-07-21 15:36:54,439 INFO 15:36 Morrisons Halifax submitted (Orders 422, Units 11967, Fulfilled 11660, UPH 68, INF 5.5 %, Found 94.5 %, Cancelled 13, Lates 25.3 %, Time available: 194:36)
+2024-07-21 15:36:55,454 INFO 15:36 Morrisons Rhyl submitted (Orders 58, Units 1574, Fulfilled 1557, UPH 84, INF 1.7 %, Found 98.3 %, Cancelled 1, Lates 3.3 %, Time available: 24:32)
+2024-07-21 15:36:55,856 INFO 15:36 Reddish Morrisons submitted (Orders 344, Units 9008, Fulfilled 8800, UPH 78, INF 3.8 %, Found 96.2 %, Cancelled 11, Lates 2.9 %, Time available: 129:18)
+2024-07-21 15:36:55,987 INFO 15:36 Hunslet Morrisons submitted (Orders 784, Units 21531, Fulfilled 21019, UPH 81, INF 3.2 %, Found 96.8 %, Cancelled 19, Lates 17.3 %, Time available: 299:19)
+2024-07-21 15:37:02,146 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:37:09,100 INFO 15:37 Morrisons Connahs Quay submitted (Orders 307, Units 8758, Fulfilled 8636, UPH 68, INF 3.3 %, Found 96.7 %, Cancelled 1, Lates 7.5 %, Time available: 144:55)
+2024-07-21 15:37:09,189 INFO 15:37 Morrisons Wrexham submitted (Orders 88, Units 2337, Fulfilled 2313, UPH 81, INF 2.2 %, Found 97.8 %, Cancelled 3, Lates 3.3 %, Time available: 46:31)
+2024-07-21 15:37:09,342 INFO 15:37 Morrison Preston - Riversway submitted (Orders 198, Units 5265, Fulfilled 5135, UPH 76, INF 4.3 %, Found 95.7 %, Cancelled 8, Lates 8.2 %, Time available: 84:14)
+2024-07-21 15:37:09,578 INFO 15:37 Belle Vale Morrisons submitted (Orders 498, Units 13467, Fulfilled 13240, UPH 73, INF 3.5 %, Found 96.5 %, Cancelled 15, Lates 4.5 %, Time available: 208:32)
+2024-07-21 15:37:13,042 INFO 15:37 Catcliffe Morrisons submitted (Orders 777, Units 21360, Fulfilled 20925, UPH 73, INF 4.4 %, Found 95.6 %, Cancelled 20, Lates 29.4 %, Time available: 316:31)
+2024-07-21 15:37:27,585 INFO 15:37 Morrisons Stoke submitted (Orders 491, Units 14686, Fulfilled 14500, UPH 87, INF 2.2 %, Found 97.8 %, Cancelled 8, Lates 8.9 %, Time available: 189:23)
+2024-07-21 15:37:29,957 INFO 15:37 Morrisons Cleethorpes submitted (Orders 68, Units 1940, Fulfilled 1901, UPH 86, INF 2.7 %, Found 97.3 %, Cancelled 2, Lates 11.7 %, Time available: 25:44)
+2024-07-21 15:37:32,884 INFO 15:37 Morrisons Analby submitted (Orders 260, Units 7535, Fulfilled 7438, UPH 92, INF 2.5 %, Found 97.5 %, Cancelled 5, Lates 2.6 %, Time available: 92:13)
+2024-07-21 15:37:33,437 INFO 15:37 Morrisons Lincoln submitted (Orders 86, Units 2028, Fulfilled 2016, UPH 84, INF 1.7 %, Found 98.3 %, Cancelled 4, Lates 6.6 %, Time available: 29:18)
+2024-07-21 15:37:33,733 INFO 15:37 Morrisons York submitted (Orders 134, Units 4016, Fulfilled 3966, UPH 85, INF 2.8 %, Found 97.2 %, Cancelled 2, Lates 0.7 %, Time available: 56:00)
+2024-07-21 15:37:34,812 INFO 15:37 Morrisons Newark submitted (Orders 69, Units 1915, Fulfilled 1904, UPH 82, INF 1.6 %, Found 98.4 %, Cancelled 0, Lates 0 %, Time available: 31:42)
+2024-07-21 15:37:54,431 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:37:54,468 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:37:59,387 ERROR Failed to process URL: https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.AAADLFYR4W67BJPOCTSGVGAKQJDA&mons_sel_mkid=AM7DNVYQULIQ5
+2024-07-21 15:38:08,464 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:38:08,848 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:38:09,221 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:38:10,240 INFO 15:38 Morrisons Binley submitted (Orders 491, Units 13776, Fulfilled 13579, UPH 71, INF 2.2 %, Found 97.8 %, Cancelled 21, Lates 8.7 %, Time available: 208:31)
+2024-07-21 15:38:10,260 INFO 15:38 Morrisons Bromsgrove submitted (Orders 434, Units 12879, Fulfilled 12726, UPH 81, INF 2.0 %, Found 98.0 %, Cancelled 12, Lates 3.3 %, Time available: 185:12)
+2024-07-21 15:38:10,376 ERROR Failed to process URL: https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.XFOODPQL3JFMELKFESHKPN4OU4&mons_sel_mkid=AM7DNVYQULIQ5
+2024-07-21 15:38:10,483 ERROR Failed to process URL: https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.TJ4PAMH35J2QJM4C6ZO7NWGQ6M&mons_sel_mkid=AM7DNVYQULIQ5
+2024-07-21 15:38:10,531 ERROR Failed to process URL: https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.RJGUNTBQ6NIKOF3VZDRL7ZVWQI&mons_sel_mkid=AM7DNVYQULIQ5
+2024-07-21 15:38:13,148 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:38:19,426 ERROR Error during form submission: Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+waiting for locator("//div[contains(text(),'Your response has been recorded.')]") to be visible
+
+2024-07-21 15:38:19,427 INFO 15:38 Morrisons Staveley submitted (Orders 358, Units 10055, Fulfilled 9937, UPH 69, INF 2.1 %, Found 97.9 %, Cancelled 10, Lates 13.5 %, Time available: 162:05)
+2024-07-21 15:38:22,271 INFO 15:38 Sheldon Morrisons submitted (Orders 468, Units 13078, Fulfilled 12823, UPH 82, INF 2.7 %, Found 97.3 %, Cancelled 19, Lates 3.1 %, Time available: 185:06)
+2024-07-21 15:38:27,579 INFO 15:38 Morrisons Gloucester submitted (Orders 218, Units 6300, Fulfilled 6222, UPH 80, INF 3.4 %, Found 96.6 %, Cancelled 3, Lates 0.6 %, Time available: 94:26)
+2024-07-21 15:38:28,873 INFO 15:38 Morrisons Ebbw Vale submitted (Orders 46, Units 1174, Fulfilled 1153, UPH 80, INF 3.7 %, Found 96.3 %, Cancelled 3, Lates 1.7 %, Time available: 16:07)
+2024-07-21 15:38:29,047 INFO 15:38 Morrisons Chippenham submitted (Orders 83, Units 2133, Fulfilled 2108, UPH 84, INF 2.8 %, Found 97.2 %, Cancelled 1, Lates 6.7 %, Time available: 29:58)
+2024-07-21 15:38:29,481 INFO 15:38 Morrisons Newport submitted (Orders 60, Units 1816, Fulfilled 1799, UPH 87, INF 2.5 %, Found 97.5 %, Cancelled 0, Lates 3.3 %, Time available: 34:08)
+2024-07-21 15:38:35,589 INFO 15:38 Morrisons Baglan Moor submitted (Orders 443, Units 12845, Fulfilled 12621, UPH 85, INF 3.8 %, Found 96.2 %, Cancelled 21, Lates 15.1 %, Time available: 156:11)
+2024-07-21 15:38:47,883 INFO 15:38 Morrisons Cardiff Tygals submitted (Orders 440, Units 12121, Fulfilled 11905, UPH 77, INF 3.7 %, Found 96.3 %, Cancelled 4, Lates 15.6 %, Time available: 184:05)
+2024-07-21 15:38:48,350 INFO 15:38 Morrisons Bristol submitted (Orders 252, Units 7353, Fulfilled 7285, UPH 74, INF 2.2 %, Found 97.8 %, Cancelled 6, Lates 1.4 %, Time available: 115:22)
+2024-07-21 15:38:56,649 INFO 15:38 Morrisons Basingstoke submitted (Orders 120, Units 3360, Fulfilled 3324, UPH 74, INF 2.5 %, Found 97.5 %, Cancelled 6, Lates 13.6 %, Time available: 53:52)
+2024-07-21 15:39:00,392 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:04,995 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:04,996 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:05,035 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:05,188 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:06,755 INFO 15:39 Morrisons Banbury submitted (Orders 90, Units 2382, Fulfilled 2355, UPH 82, INF 1.9 %, Found 98.1 %, Cancelled 3, Lates 6.9 %, Time available: 53:56)
+2024-07-21 15:39:06,948 ERROR Failed to process URL: https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.DICI5ABDNGFBEQNXKQVBO5VIJI&mons_sel_mkid=AM7DNVYQULIQ5
+2024-07-21 15:39:07,714 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:15,028 INFO 15:39 Morrisons Cambourne submitted (Orders 237, Units 6883, Fulfilled 6769, UPH 76, INF 4.0 %, Found 96.0 %, Cancelled 6, Lates 15.3 %, Time available: 103:33)
+2024-07-21 15:39:17,947 INFO 15:39 Morrisons Corby submitted (Orders 93, Units 2632, Fulfilled 2603, UPH 71, INF 2.4 %, Found 97.6 %, Cancelled 1, Lates 4.9 %, Time available: 44:44)
+2024-07-21 15:39:21,445 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:21,993 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:23,969 INFO 15:39 Walsall Morrisons submitted (Orders 711, Units 19880, Fulfilled 19584, UPH 71, INF 2.6 %, Found 97.4 %, Cancelled 19, Lates 3.3 %, Time available: 319:23)
+2024-07-21 15:39:27,536 INFO 15:39 Morrisons High Wycombe submitted (Orders 120, Units 3284, Fulfilled 3261, UPH 85, INF 1.5 %, Found 98.5 %, Cancelled 8, Lates 2.4 %, Time available: 48:40)
+2024-07-21 15:39:28,638 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:36,015 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:38,682 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:38,682 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:47,107 INFO 15:39 Morrisons Reading submitted (Orders 217, Units 6580, Fulfilled 6471, UPH 66, INF 2.2 %, Found 97.8 %, Cancelled 4, Lates 7.7 %, Time available: 126:04)
+2024-07-21 15:39:48,171 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:53,883 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:56,024 INFO 15:39 Morrisons Milton Keynes submitted (Orders 371, Units 11473, Fulfilled 11316, UPH 69, INF 2.5 %, Found 97.5 %, Cancelled 7, Lates 15.2 %, Time available: 186:35)
+2024-07-21 15:39:57,130 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:39:57,178 INFO 15:39 Morrisons Swindon submitted (Orders 198, Units 5666, Fulfilled 5605, UPH 92, INF 2.1 %, Found 97.9 %, Cancelled 13, Lates 6.5 %, Time available: 66:25)
+2024-07-21 15:39:59,760 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:40:03,332 INFO 15:40 Morrisons Northampton submitted (Orders 348, Units 10156, Fulfilled 10033, UPH 67, INF 2.0 %, Found 98.0 %, Cancelled 13, Lates 6.3 %, Time available: 181:47)
+2024-07-21 15:40:05,989 INFO 15:40 Morrisons Welwyn submitted (Orders 280, Units 6732, Fulfilled 4979, UPH 102, INF 27.0 %, Found 73.0 %, Cancelled 4, Lates 0 %, Time available: 183:27)
+2024-07-21 15:40:08,378 INFO 15:40 Morrisons Canvey Island submitted (Orders 334, Units 9569, Fulfilled 9422, UPH 87, INF 2.4 %, Found 97.6 %, Cancelled 6, Lates 11.7 %, Time available: 130:07)
+2024-07-21 15:40:08,484 INFO 15:40 Weybridge Morrisons submitted (Orders 270, Units 7725, Fulfilled 7458, UPH 68, INF 4.0 %, Found 96.0 %, Cancelled 10, Lates 11.5 %, Time available: 128:26)
+2024-07-21 15:40:08,769 INFO 15:40 Woking Morrisons submitted (Orders 466, Units 12716, Fulfilled 12500, UPH 73, INF 2.4 %, Found 97.6 %, Cancelled 9, Lates 6.9 %, Time available: 207:16)
+2024-07-21 15:40:09,136 INFO 15:40 Morrisons Gorleston submitted (Orders 33, Units 816, Fulfilled 809, UPH 77, INF 2.9 %, Found 97.1 %, Cancelled 0, Lates 2.3 %, Time available: 14:49)
+2024-07-21 15:40:13,346 INFO 15:40 Morrisons Ipswich submitted (Orders 106, Units 3367, Fulfilled 3316, UPH 84, INF 2.9 %, Found 97.1 %, Cancelled 1, Lates 2.7 %, Time available: 72:14)
+2024-07-21 15:40:13,594 ERROR Error filling form field Field 1 with data https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.AUXJGBRU7DEMYNYEBI3VJ4RLVA&mons_sel_mkid=AM7DNVYQULIQ5: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 1", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-labelledby="i1" aria-disabled="true" class="whsOnd zHQkBf" data-initial-value="" data-initial-dir="auto" aria-describedby="i2 i3"/>
+  -   fill("https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.AUXJGBRU7DEMYNYEBI3VJ4RLVA&mons_sel_mkid=AM7DNVYQULIQ5")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+
+2024-07-21 15:40:14,132 ERROR Failed to read the log file for progress status.
+2024-07-21 15:40:14,959 INFO 15:40 Morrisons Peterborough submitted (Orders 242, Units 6949, Fulfilled 6836, UPH 92, INF 3.4 %, Found 96.6 %, Cancelled 5, Lates 1.0 %, Time available: 93:48)
+2024-07-21 15:40:16,415 INFO 15:40 Morrisons Norwich submitted (Orders 136, Units 4019, Fulfilled 3923, UPH 79, INF 3.5 %, Found 96.5 %, Cancelled 6, Lates 3.0 %, Time available: 58:42)
+2024-07-21 15:40:18,219 INFO 15:40 Morrisons Wisbech submitted (Orders 73, Units 2104, Fulfilled 2076, UPH 104, INF 1.5 %, Found 98.5 %, Cancelled 2, Lates 0 %, Time available: 22:54)
+2024-07-21 15:40:20,846 INFO 15:40 Morrisons Witham submitted (Orders 129, Units 3583, Fulfilled 3528, UPH 78, INF 3.5 %, Found 96.5 %, Cancelled 1, Lates 5.5 %, Time available: 58:49)
+2024-07-21 15:40:23,220 INFO 15:40 Acton Morrisons submitted (Orders 449, Units 12184, Fulfilled 11837, UPH 83, INF 4.3 %, Found 95.7 %, Cancelled 17, Lates 13.2 %, Time available: 200:05)
+2024-07-21 15:40:27,886 INFO 15:40 Morrisons Becontree Heath submitted (Orders 187, Units 5529, Fulfilled 5457, UPH 94, INF 2.5 %, Found 97.5 %, Cancelled 5, Lates 3.2 %, Time available: 70:44)
+2024-07-21 15:40:33,771 INFO 15:40 Morrisons Canning Town submitted (Orders 210, Units 5774, Fulfilled 5613, UPH 83, INF 3.6 %, Found 96.4 %, Cancelled 8, Lates 3.9 %, Time available: 94:57)
+2024-07-21 15:40:35,074 INFO 15:40 Morrisons Chingford submitted (Orders 424, Units 11386, Fulfilled 11049, UPH 76, INF 4.0 %, Found 96.0 %, Cancelled 19, Lates 10.1 %, Time available: 184:26)
+2024-07-21 15:40:43,442 INFO 15:40 Morrisons Harrow - Trident Point submitted (Orders 219, Units 5329, Fulfilled 5247, UPH 94, INF 1.9 %, Found 98.1 %, Cancelled 4, Lates 2.3 %, Time available: 69:03)
+2024-07-21 15:40:43,600 ERROR Error filling form field Field 2 with data Watford Morrisons: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 2", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-labelledby="i5" aria-disabled="true" class="whsOnd zHQkBf" data-initial-value="" data-initial-dir="auto" aria-describedby="i6 i7"/>
+  -   fill("Watford Morrisons")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+
+2024-07-21 15:40:43,714 ERROR Failed to read the log file for progress status.
+2024-07-21 15:40:43,854 INFO 15:40 Peckham Morrisons submitted (Orders 199, Units 5139, Fulfilled 4946, UPH 83, INF 5.8 %, Found 94.2 %, Cancelled 8, Lates 0 %, Time available: 76:14)
+2024-07-21 15:40:44,761 INFO 15:40 Queensbury Morrisons submitted (Orders 266, Units 7344, Fulfilled 6919, UPH 61, INF 7.2 %, Found 92.8 %, Cancelled 10, Lates 6.2 %, Time available: 137:52)
+2024-07-21 15:40:46,326 INFO 15:40 Croydon Morrisons submitted (Orders 615, Units 17306, Fulfilled 16852, UPH 73, INF 4.6 %, Found 95.4 %, Cancelled 11, Lates 2.8 %, Time available: 258:06)
+2024-07-21 15:40:47,568 INFO 15:40 Stratford Morrisons submitted (Orders 369, Units 10303, Fulfilled 10061, UPH 68, INF 2.8 %, Found 97.2 %, Cancelled 8, Lates 4.0 %, Time available: 175:01)
+2024-07-21 15:40:52,427 INFO 15:40 Morrisons Canterbury submitted (Orders 53, Units 1973, Fulfilled 1938, UPH 74, INF 3.0 %, Found 97.0 %, Cancelled 2, Lates 4.3 %, Time available: 31:54)
+2024-07-21 15:40:53,267 INFO 15:40 Morrisons Eastbourne submitted (Orders 160, Units 4601, Fulfilled 4561, UPH 82, INF 1.2 %, Found 98.8 %, Cancelled 7, Lates 33.2 %, Time available: 66:11)
+2024-07-21 15:40:55,837 INFO 15:40 Morrisons Welling submitted (Orders 365, Units 10726, Fulfilled 10546, UPH 86, INF 2.6 %, Found 97.4 %, Cancelled 10, Lates 2.4 %, Time available: 143:26)
+2024-07-21 15:40:56,554 INFO 15:40 Morrisons Gravesend submitted (Orders 449, Units 13940, Fulfilled 13657, UPH 78, INF 3.9 %, Found 96.1 %, Cancelled 5, Lates 10.0 %, Time available: 199:20)
+2024-07-21 15:40:57,644 INFO 15:40 Morrisons Maidstone submitted (Orders 50, Units 1361, Fulfilled 1346, UPH 75, INF 2.6 %, Found 97.4 %, Cancelled 5, Lates 9.7 %, Time available: 22:23)
+2024-07-21 15:41:06,717 INFO 15:41 Portsmouth Morrisons submitted (Orders 751, Units 20700, Fulfilled 20406, UPH 80, INF 2.7 %, Found 97.3 %, Cancelled 8, Lates 2.2 %, Time available: 286:09)
+2024-07-21 15:41:07,572 INFO 15:41 Morrisons Oxted submitted (Orders 109, Units 2698, Fulfilled 2660, UPH 79, INF 1.7 %, Found 98.3 %, Cancelled 2, Lates 2.5 %, Time available: 43:15)
+2024-07-21 15:41:12,961 INFO 15:41 Morrisons Exeter submitted (Orders 104, Units 3158, Fulfilled 3107, UPH 77, INF 2.9 %, Found 97.1 %, Cancelled 2, Lates 0 %, Time available: 48:11)
+2024-07-21 15:41:13,607 ERROR Error filling form field Field 3 with data 226: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 3", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-labelledby="i9" aria-disabled="true" class="whsOnd zHQkBf" data-initial-value="" data-initial-dir="auto" aria-describedby="i10 i11"/>
+  -   fill("226")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+
+2024-07-21 15:41:14,123 INFO 15:41 Morrisons Worthing submitted (Orders 218, Units 6409, Fulfilled 6208, UPH 81, INF 5.1 %, Found 94.9 %, Cancelled 5, Lates 6.9 %, Time available: 90:56)
+2024-07-21 15:41:16,769 INFO 15:41 Morrisons Plymouth submitted (Orders 288, Units 8799, Fulfilled 8612, UPH 80, INF 4.2 %, Found 95.8 %, Cancelled 11, Lates 24.1 %, Time available: 130:12)
+2024-07-21 15:41:17,857 INFO 15:41 Morrisons Taunton submitted (Orders 52, Units 1324, Fulfilled 1318, UPH 97, INF 0.7 %, Found 99.3 %, Cancelled 2, Lates 0 %, Time available: 20:24)
+2024-07-21 15:41:18,031 INFO 15:41 Morrisons Redruth submitted (Orders 45, Units 1215, Fulfilled 1185, UPH 72, INF 4.4 %, Found 95.6 %, Cancelled 0, Lates 3.1 %, Time available: 20:51)
+2024-07-21 15:41:19,808 INFO 15:41 Morrisons Warminster submitted (Orders 56, Units 1440, Fulfilled 1436, UPH 88, INF 0.8 %, Found 99.2 %, Cancelled 1, Lates 0 %, Time available: 24:48)
+2024-07-21 15:41:20,707 INFO 15:41 Morrisons Totton submitted (Orders , Units , Fulfilled , UPH , INF , Found , Cancelled 6, Lates 15.6 %, Time available: 26:54)
+2024-07-21 15:41:21,140 INFO 15:41 Morrisons Totnes submitted (Orders 57, Units 1350, Fulfilled 1324, UPH 85, INF 3.1 %, Found 96.9 %, Cancelled 4, Lates 0 %, Time available: 19:14)
+2024-07-21 15:41:24,927 INFO 15:41 Morrisons Weston Super Mare submitted (Orders 94, Units 2646, Fulfilled 2635, UPH 88, INF 0.7 %, Found 99.3 %, Cancelled 6, Lates 0 %, Time available: 41:29)
+2024-07-21 15:41:28,867 INFO 15:41 Morrisons Verwood submitted (Orders 49, Units 1449, Fulfilled 1427, UPH 72, INF 3.7 %, Found 96.3 %, Cancelled 0, Lates 3.3 %, Time available: 30:43)
+2024-07-21 15:41:43,472 ERROR Error filling form field Field 4 with data 7204: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 4", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i13" data-initial-value="" data-initial-dir="auto" aria-describedby="i14 i15"/>
+  -   fill("7204")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:41:43,750 ERROR Failed to read the log file for progress status.
+2024-07-21 15:42:13,477 ERROR Error filling form field Field 5 with data 6825: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 5", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i17" data-initial-value="" data-initial-dir="auto" aria-describedby="i18 i19"/>
+  -   fill("6825")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:42:14,349 ERROR Failed to read the log file for progress status.
+2024-07-21 15:42:43,481 ERROR Error filling form field Field 6 with data 86: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 6", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i21" data-initial-value="" data-initial-dir="auto" aria-describedby="i22 i23"/>
+  -   fill("86")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #64
+  -   waiting 500ms
+
+2024-07-21 15:42:43,930 ERROR Failed to read the log file for progress status.
+2024-07-21 15:43:13,485 ERROR Error filling form field Field 7 with data 7.5 %: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 7", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i25" data-initial-value="" data-initial-dir="auto" aria-describedby="i26 i27"/>
+  -   fill("7.5 %")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:43:13,511 ERROR Failed to read the log file for progress status.
+2024-07-21 15:43:43,491 ERROR Error filling form field Field 8 with data 92.5 %: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 8", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i29" data-initial-value="" data-initial-dir="auto" aria-describedby="i30 i31"/>
+  -   fill("92.5 %")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:43:44,111 ERROR Failed to read the log file for progress status.
+2024-07-21 15:44:13,495 ERROR Error filling form field Field 9 with data 8: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 9", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i33" data-initial-value="" data-initial-dir="auto" aria-describedby="i34 i35"/>
+  -   fill("8")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:44:13,689 ERROR Failed to read the log file for progress status.
+2024-07-21 15:44:43,499 ERROR Error filling form field Field 10 with data 1.8 %: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 10", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i37" data-initial-value="" data-initial-dir="auto" aria-describedby="i38 i39"/>
+  -   fill("1.8 %")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:44:44,289 ERROR Failed to read the log file for progress status.
+2024-07-21 15:45:13,503 ERROR Error filling form field Field 12 with data 90:59: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+waiting for get_by_label("Field 12", exact=True)
+  -   locator resolved to <input disabled dir="auto" type="text" tabindex="0" jsname="YPqjbf" autocomplete="off" aria-disabled="true" class="whsOnd zHQkBf" aria-labelledby="i45" data-initial-value="" data-initial-dir="auto" aria-describedby="i46 i47"/>
+  -   fill("90:59")
+  - attempting fill action
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #1
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #2
+  -   waiting 20ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #3
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #4
+  -   waiting 100ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #5
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #6
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #7
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #8
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #9
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #10
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #11
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #12
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #13
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #14
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #15
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #16
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #17
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #18
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #19
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #20
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #21
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #22
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #23
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #24
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #25
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #26
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #27
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #28
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #29
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #30
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #31
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #32
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #33
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #34
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #35
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #36
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #37
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #38
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #39
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #40
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #41
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #42
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #43
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #44
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #45
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #46
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #47
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #48
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #49
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #50
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #51
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #52
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #53
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #54
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #55
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #56
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #57
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #58
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #59
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #60
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #61
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #62
+  -   waiting 500ms
+  -   waiting for element to be visible, enabled and editable
+  -   element is not enabled
+  - retrying fill action, attempt #63
+  -   waiting 500ms
+
+2024-07-21 15:45:13,868 ERROR Failed to read the log file for progress status.
+2024-07-21 15:45:33,552 ERROR Error during form submission: Page.wait_for_selector: Timeout 20000ms exceeded.
+Call log:
+waiting for locator("//div[contains(text(),'Your response has been recorded.')]") to be visible
+
+2024-07-21 15:45:33,552 INFO 15:45 Watford Morrisons submitted (Orders 226, Units 7204, Fulfilled 6825, UPH 86, INF 7.5 %, Found 92.5 %, Cancelled 8, Lates 1.8 %, Time available: 90:59)
+2024-07-21 15:45:33,623 INFO Retrying 5 failed URLs...
+2024-07-21 15:46:04,703 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:46:35,709 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:06,713 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:06,713 ERROR Max retries reached for https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.AAADLFYR4W67BJPOCTSGVGAKQJDA&mons_sel_mkid=AM7DNVYQULIQ5. Skipping.
+2024-07-21 15:47:07,850 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:08,863 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:09,876 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:09,876 ERROR Max retries reached for https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.XFOODPQL3JFMELKFESHKPN4OU4&mons_sel_mkid=AM7DNVYQULIQ5. Skipping.
+2024-07-21 15:47:10,937 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:11,950 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:12,962 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:12,962 ERROR Max retries reached for https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.TJ4PAMH35J2QJM4C6ZO7NWGQ6M&mons_sel_mkid=AM7DNVYQULIQ5. Skipping.
+2024-07-21 15:47:14,043 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:15,059 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:16,070 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:16,070 ERROR Max retries reached for https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.RJGUNTBQ6NIKOF3VZDRL7ZVWQI&mons_sel_mkid=AM7DNVYQULIQ5. Skipping.
+2024-07-21 15:47:17,132 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:18,143 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:19,155 ERROR Failed to process URL. Please check the website availability and layout.
+2024-07-21 15:47:19,155 ERROR Max retries reached for https://sellercentral.amazon.co.uk/snowdash?ref_=mp_home_logo_xx&cor=mmp_EU&mons_sel_dir_mcid=amzn1.merchant.d.DICI5ABDNGFBEQNXKQVBO5VIJI&mons_sel_mkid=AM7DNVYQULIQ5. Skipping.

@@ -295,7 +295,7 @@ async def process_urls(workers: int):
         if len(tasks) >= workers:
             await asyncio.gather(*tasks)
             tasks = []
-        await asyncio.sleep(0.2)  # Slight offset for each worker
+        await asyncio.sleep(1.5)  # Slight offset for each worker
 
     if tasks:
         await asyncio.gather(*tasks)

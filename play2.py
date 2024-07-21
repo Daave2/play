@@ -1,16 +1,30 @@
-import asyncio
-import json
+import logging
+from datetime import datetime
+from quart import Quart, jsonify, render_template, request, send_file, Response
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.date import DateTrigger
+from apscheduler.triggers.interval import IntervalTrigger
+from playwright.async_api import async_playwright, Page, BrowserContext
 import os
 import re
+import flask
 import requests
-import logging
-from datetime import datetime, timedelta
-from playwright.async_api import async_playwright, Page, BrowserContext, TimeoutError
-from typing import Optional, List, Dict
+import traceback
+import csv
+import json
+import io
+import psutil
+import asyncio
+from threading import Thread, Lock
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Optional, Dict
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 logger = logging.getLogger('mini_scraper')
+
+# Initialize Flask app
+app = Flask(__name__)
 
 # Load configuration from config.json
 try:
@@ -23,20 +37,144 @@ except Exception as e:
     raise SystemExit(e)
 
 LOGIN_URL = config['login_url']
-FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeOxv-LFTLy_so8UQPPZCvZfuCMQU0HOQS7y43YDYShaX5o6g/viewform"
+FORM_URL = config['form_url']
 STORAGE_STATE = 'state.json'
 urls_data = []
+schedules = []
+progress = {'current': 0, 'total': 0, 'lastStore': 'N/A'}
+logs = []
+is_running = False
 
-# Performance metrics
-performance_data = {
-    'total_urls': 0,
-    'processed_urls': 0,
-    'failed_urls': [],
-    'retry_attempts': 0,
-    'times_taken': [],
-    'form_times': [],
-    'url_times': []
-}
+# Track last run time
+last_run_time: Optional[datetime] = None
+
+# Load initial data (if available)
+def load_initial_data():
+    global schedules
+    if os.path.exists('schedules.json'):
+        with open('schedules.json', 'r') as file:
+            schedules = json.load(file)
+
+# Save schedules to file
+def save_schedules():
+    with open('schedules.json', 'w') as file:
+        json.dump(schedules, file)
+
+# Function to calculate next run time based on schedules
+def calculate_next_run() -> Optional[datetime]:
+    if not schedules:
+        return None
+    now = datetime.now()
+    next_run: Optional[datetime] = None
+    for schedule in schedules:
+        schedule_time = datetime.strptime(schedule['datetime'], '%Y-%m-%d %H:%M:%S')
+        if schedule_time > now and (next_run is None or schedule_time < next_run):
+            next_run = schedule_time
+        if schedule['repeat_daily']:
+            while schedule_time < now:
+                schedule_time += timedelta(days=1)
+            if schedule_time < next_run or next_run is None:
+                next_run = schedule_time
+    return next_run
+
+# Routes
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/load_default', methods=['GET'])
+def load_default():
+    try:
+        load_default_data()
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/start_now', methods=['POST'])
+def start_now():
+    global is_running
+    if is_running:
+        return jsonify({'status': 'Extraction is already running'})
+
+    is_running = True
+    asyncio.run(start_extraction())
+    return jsonify({'status': 'Extraction started'})
+
+@app.route('/stop', methods=['POST'])
+def stop():
+    global is_running
+    is_running = False
+    # Logic to stop the running extraction process
+    return jsonify({'status': 'Extraction stopped'})
+
+@app.route('/clear_log', methods=['POST'])
+def clear_log():
+    global logs
+    logs = []
+    return jsonify({'status': 'Log cleared'})
+
+@app.route('/schedules', methods=['GET'])
+def get_schedules():
+    return jsonify({'schedules': schedules})
+
+@app.route('/add_schedule', methods=['POST'])
+def add_schedule():
+    data = request.json
+    schedule = {
+        'id': len(schedules) + 1,
+        'name': data['name'],
+        'datetime': data['datetime'],
+        'repeat_daily': data['repeat_daily']
+    }
+    schedules.append(schedule)
+    save_schedules()
+    return jsonify({'success': True})
+
+@app.route('/delete_schedule/<int:schedule_id>', methods=['POST'])
+def delete_schedule(schedule_id):
+    global schedules
+    schedules = [s for s in schedules if s['id'] != schedule_id]
+    save_schedules()
+    return jsonify({'success': True})
+
+@app.route('/toggle_repeat_daily/<int:schedule_id>', methods=['POST'])
+def toggle_repeat_daily(schedule_id):
+    data = request.json
+    for schedule in schedules:
+        if schedule['id'] == schedule_id:
+            schedule['repeat_daily'] = data['repeat_daily']
+            save_schedules()
+            return jsonify({'success': True})
+    return jsonify({'success': False})
+
+@app.route('/edit_schedule/<int:schedule_id>', methods=['POST'])
+def edit_schedule(schedule_id):
+    data = request.json
+    for schedule in schedules:
+        if schedule['id'] == schedule_id:
+            schedule['name'] = data['name']
+            schedule['datetime'] = data['datetime']
+            schedule['repeat_daily'] = data['repeat_daily']
+            save_schedules()
+            return jsonify({'success': True})
+    return jsonify({'success': False})
+
+@app.route('/progress_status', methods=['GET'])
+def progress_status():
+    return jsonify({'progress': progress, 'percentage': (progress['current'] / progress['total']) * 100 if progress['total'] > 0 else 0, 'latestLog': logs[-1] if logs else 'N/A'})
+
+@app.route('/log', methods=['GET'])
+def get_log():
+    return jsonify({'logs': logs})
+
+@app.route('/stats', methods=['GET'])
+def get_stats():
+    global last_run_time
+    next_run_time = calculate_next_run()
+    return jsonify({
+        'last_run_time': last_run_time.strftime('%Y-%m-%d %H:%M:%S') if last_run_time else 'N/A',
+        'next_run_time': next_run_time.strftime('%Y-%m-%d %H:%M:%S') if next_run_time else 'N/A'
+    })
 
 # Load default data
 def load_default_data():
@@ -46,7 +184,6 @@ def load_default_data():
             urls_data = [row.strip() for row in file.readlines()]
         if not urls_data:
             raise ValueError("URLs data is empty")
-        performance_data['total_urls'] = len(urls_data)
         logger.info(f'{len(urls_data)} URLs loaded from urls.csv')
     except Exception as e:
         logger.critical("Failed to load the default CSV file. Exiting...", exc_info=True)
@@ -60,9 +197,9 @@ async def perform_login_and_otp(page: Page) -> bool:
         await page.fill('input[id="ap_password"]', config['login_password'])
         await page.click('input[id="signInSubmit"]')
 
-        otp_field = await page.wait_for_selector('input[type="tel"]', timeout=15000)
+        otp_field = await page.wait_for_selector('input[type="tel"]', timeout=30000)
         if otp_field:
-            await asyncio.sleep(10)
+            await asyncio.sleep(20)
             otp_url = "http://13.49.230.218:5003/get_otp"
             while True:
                 try:
@@ -78,7 +215,7 @@ async def perform_login_and_otp(page: Page) -> bool:
             await page.fill('input[type="tel"]', otp_code)
             await page.get_by_label("Don't require OTP on this").check()
             await page.get_by_label("Sign in").click()
-            await asyncio.sleep(5)
+            await asyncio.sleep(10)
 
             await page.context.storage_state(path=STORAGE_STATE)
             return True
@@ -101,71 +238,15 @@ async def wait_for_selector_with_retry(page: Page, selector: str, retries: int =
                 logger.error(f"Timeout waiting for selector {selector} after {retries} attempts.")
                 raise
 
-# Change date to today with retries
-async def change_date_to_today(page: Page, retries: int = 3):
-    today = datetime.today().strftime('%m/%d/%Y')
-    for attempt in range(retries):
-        try:
-            await page.get_by_text("Customised").click()
-            await page.get_by_text("Customised").click()
-            date_locator = page.locator("#katal-id-9")
-            await date_locator.click()
-            await date_locator.fill(today)
-            await date_locator.click(click_count=3)
-            await date_locator.fill(today)
-            await page.get_by_text("1-day trailing7-day trailing30-day trailingCustomised Export CSV").click()
-            await page.locator("kat-dropdown:nth-child(2) > .kat-select-container > .select-header").click()
-            
-            # Use a more specific selector for the 9:00 PM option
-            dropdown_options = page.locator(".option")
-            await dropdown_options.locator('text="9:00 PM"').click()
-            
-            await page.get_by_role("button", name="Apply").click()
-
-            # Retry logic for clicking on the dynamic element using XPath
-            for col_attempt in range(retries):
-                try:
-                    await page.evaluate('''() => {
-                        const xpath = "/html/body/div[1]/div[2]/div/div/div/div[2]/div[2]/kat-tabs/kat-tab[1]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]/kat-table-cell[10]/div";
-                        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-                        if (element) {
-                            element.click();
-                        }
-                    }''')
-                    break  # If successful, break out of the loop
-                except Exception as e:
-                    if col_attempt < retries - 1:
-                        logger.warning(f"Timeout clicking on the dynamic element, retrying {col_attempt + 1}/{retries}...")
-                        await asyncio.sleep(2)  # Wait before retrying
-                    else:
-                        raise
-
-            return True
-        except Exception as e:
-            logger.error(f"Failed to change the date to today on attempt {attempt + 1}/{retries}.", exc_info=True)
-            if attempt < retries - 1:
-                await asyncio.sleep(2)  # Wait before retrying
-    return False
-
-
-
-
 # Process URL and extract data
 async def process_url(page: Page, url: str, retries=3) -> Optional[dict]:
-    start_time = datetime.now()
     for attempt in range(retries):
         logger.info(f"Processing URL: {url}, attempt {attempt + 1}")
         try:
             await page.goto(url)
             if "signin" in page.url or "ap/signin" in page.url:
                 logger.info(f"Sign-in required for {url}. Skipping this URL.")
-                performance_data['failed_urls'].append(url)
                 return None
-
-            date_changed = await change_date_to_today(page)
-            if not date_changed:
-                logger.error(f"Failed to change date to today after {retries} attempts for {url}")
-                continue
 
             store_element = await wait_for_selector_with_retry(page, '#partner-switcher button span b')
             if not store_element:
@@ -215,13 +296,12 @@ async def process_url(page: Page, url: str, retries=3) -> Optional[dict]:
                 # Validate fields 3, 4, and 5
                 if not data['orders'] or not data['units'] or not data['fulfilled']:
                     logger.warning(f"Fields 3, 4, and 5 are missing for {url}. Retrying...")
-                    performance_data['retry_attempts'] += 1
                     continue
 
                 availability_tab_xpath = '//span[@slot="label" and text()="Availability"]'
                 try:
                     await page.click(availability_tab_xpath)
-                    availability_table_xpath = '//*[@id="content"]/div/div[2]/div[2]/kat-tabs/kat-tab[3]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]/kat-table-cell[7]/div'
+                    availability_table_xpath = '//*[@id="content"]/div/div[2]/div[2]/kat-tabs/kat-tab[4]/div/div[2]/kat-table/kat-table-head/kat-table-row[2]/kat-table-cell[7]/div'
                     availability_data = await wait_for_selector_with_retry(page, availability_table_xpath)
                     if availability_data:
                         availability_text = await availability_data.inner_text()
@@ -229,26 +309,20 @@ async def process_url(page: Page, url: str, retries=3) -> Optional[dict]:
                             data['availability'] = availability_text
 
                     logger.info(f"Successfully processed URL: {url}")
-                    performance_data['processed_urls'] += 1
-                    performance_data['url_times'].append((datetime.now() - start_time).total_seconds())
                     return data
                 except Exception as e:
                     logger.error("Error extracting availability data.", exc_info=True)
-                    performance_data['retry_attempts'] += 1
                     continue
             else:
                 logger.warning(f"Insufficient row data for {url}")
             break
         except Exception as e:
             logger.error("Failed to process URL. Please check the website availability and layout.", exc_info=True)
-            performance_data['retry_attempts'] += 1
     logger.info(f"Failed to process URL after {retries} attempts: {url}")
-    performance_data['failed_urls'].append(url)
     return None
 
 # Fill Google form with extracted data
 async def fill_google_form(page: Page, data: dict):
-    start_time = datetime.now()
     try:
         await page.goto(FORM_URL)
     except Exception as e:
@@ -283,7 +357,6 @@ async def fill_google_form(page: Page, data: dict):
             await page.get_by_label("Submit", exact=True).click()
             await page.wait_for_selector("//div[contains(text(),'Your response has been recorded.')]", timeout=20000)
             logger.info(f"Successfully submitted form for URL: {data['url']}")
-            performance_data['form_times'].append((datetime.now() - start_time).total_seconds())
         except Exception as e:
             logger.error("Error during form submission.", exc_info=True)
 
@@ -340,6 +413,7 @@ async def process_url_with_new_context(url: str, semaphore: asyncio.Semaphore):
 
 # Main process for URLs with multiple workers and slight offset
 async def process_urls(workers: int):
+    global last_run_time
     try:
         load_default_data()
     except Exception as e:
@@ -365,20 +439,19 @@ async def process_urls(workers: int):
     semaphore = asyncio.Semaphore(workers)
     tasks: List[asyncio.Task] = []
     total_urls = len(urls_data)
+    progress['total'] = total_urls
     for i, url in enumerate(urls_data):
         logger.info(f"Starting task for URL {i + 1}/{total_urls}: {url}")
         tasks.append(asyncio.create_task(process_url_with_new_context(url, semaphore)))
         if len(tasks) >= workers:
             await asyncio.gather(*tasks)
             tasks = []
-        await asyncio.sleep(0.2)  # Slight offset for each worker
+        await asyncio.sleep(1.5)  # Slight offset for each worker
 
     if tasks:
         await asyncio.gather(*tasks)
+    last_run_time = datetime.now()
     logger.info("All tasks completed.")
-
-    # Print performance report
-    print_performance_report()
 
 # Schedule the process
 async def schedule_task(workers: int):
@@ -388,30 +461,6 @@ async def schedule_task(workers: int):
         except Exception as e:
             logger.error("Error in scheduled task.", exc_info=True)
         await asyncio.sleep(24 * 3600)
-
-# Print performance report
-def print_performance_report():
-    total_urls = performance_data['total_urls']
-    processed_urls = performance_data['processed_urls']
-    failed_urls = len(performance_data['failed_urls'])
-    retry_attempts = performance_data['retry_attempts']
-    total_time = sum(performance_data['url_times'] + performance_data['form_times'])
-    avg_url_time = sum(performance_data['url_times']) / len(performance_data['url_times']) if performance_data['url_times'] else 0
-    avg_form_time = sum(performance_data['form_times']) / len(performance_data['form_times']) if performance_data['form_times'] else 0
-
-    logger.info("Performance Report:")
-    logger.info(f"Total URLs: {total_urls}")
-    logger.info(f"Processed URLs: {processed_urls}")
-    logger.info(f"Failed URLs: {failed_urls}")
-    logger.info(f"Retry Attempts: {retry_attempts}")
-    logger.info(f"Total Time Taken: {total_time:.2f} seconds")
-    logger.info(f"Average URL Processing Time: {avg_url_time:.2f} seconds")
-    logger.info(f"Average Form Submission Time: {avg_form_time:.2f} seconds")
-
-    if failed_urls > 0:
-        logger.info("Failed URLs List:")
-        for url in performance_data['failed_urls']:
-            logger.info(url)
 
 # Run the task with multiple workers
 if __name__ == "__main__":
