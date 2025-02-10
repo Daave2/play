@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Metrics Dashboard</title>
+
   <!-- Original CSS and external resources -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-  <!-- ElevenLabs widget (optional) -->
+  <!-- ElevenLabs widget -->
   <elevenlabs-convai agent-id="6tFVYY5c7sPi9z2Wkr9u"></elevenlabs-convai>
   <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 
-  <!-- Bootstrap 5 CSS (for modals, tables, etc.) -->
+  <!-- Chart.js for analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
   <link 
     rel="stylesheet" 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -21,8 +25,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f9; 
-      color: #000;
+      background: #f4f4f9; color: #000;
       transition: background-color 0.3s, color 0.3s;
     }
     header {
@@ -51,9 +54,7 @@
       background: #fff; padding: 20px; border-radius: 5px; 
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .section h2 {
-      margin-top: 0;
-    }
+    .section h2 { margin-top: 0; }
     .section-header {
       display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
     }
@@ -94,34 +95,18 @@
     .schedule th, .schedule td {
       border: 1px solid #ddd; padding: 8px; text-align: center; font-size: 14px;
     }
-    .schedule th {
-      background: #367D91; color: #fff;
-    }
-    .countdown {
-      color: green;
-    }
+    .schedule th { background: #367D91; color: #fff; }
+    .countdown { color: green; }
     .log-section {
       max-height: 300px; overflow-y: auto; background: #fafafa; border: 1px solid #ddd;
       padding: 10px; position: relative; word-break: break-all;
     }
-    .log-entry {
-      padding: 8px; border-bottom: 1px solid #ddd;
-    }
-    .log-entry:last-child {
-      border-bottom: none;
-    }
-    .log-entry.error {
-      color: red;
-    }
-    .log-entry.info {
-      color: blue;
-    }
-    .log-entry.success {
-      color: green;
-    }
-    .log-entry.warning {
-      color: orange;
-    }
+    .log-entry { padding: 8px; border-bottom: 1px solid #ddd; }
+    .log-entry:last-child { border-bottom: none; }
+    .log-entry.error { color: red; }
+    .log-entry.info { color: blue; }
+    .log-entry.success { color: green; }
+    .log-entry.warning { color: orange; }
     .toast {
       position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
       background: #333; color: #fff; padding: 10px 20px; border-radius: 4px; 
@@ -155,22 +140,14 @@
     .dark-mode .log-section {
       background: #1e1e1e;
     }
-    .dark-mode .schedule th {
-      background: #1e1e1e;
-    }
+    .dark-mode .schedule th { background: #1e1e1e; }
     /* Responsive */
     @media (max-width: 1080px) {
-      .controls {
-        flex-direction: column; align-items: stretch;
-      }
-      .control-button, .header-button {
-        width: 100%; text-align: center; margin-bottom: 10px;
-      }
+      .controls { flex-direction: column; align-items: stretch; }
+      .control-button, .header-button { width: 100%; text-align: center; margin-bottom: 10px; }
     }
     @media (max-width: 768px) {
-      .header-right {
-        flex-direction: column; align-items: flex-start;
-      }
+      .header-right { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -217,17 +194,17 @@
           <i class="fas fa-stop"></i>Stop
         </button>
       </div>
-      <!-- Concurrency Slider -->
+      <!-- Concurrency Slider (1–50) -->
       <div class="controls concurrency-control">
         <label for="concurrency-slider">
           Concurrency: <span id="concurrency-value">4</span>
         </label>
-        <input
-          type="range"
-          min="1"
-          max="50"
-          value="4"
-          step="1"
+        <input 
+          type="range" 
+          min="1" 
+          max="50" 
+          value="4" 
+          step="1" 
           id="concurrency-slider"
         >
       </div>
@@ -279,16 +256,25 @@
       </div>
     </section>
 
-    <!-- Logs Section (Replacing the old Analytics) -->
+    <!-- Logs Section -->
     <section class="section">
       <div class="section-header">
-        <h2>Recent Logs</h2>
+        <h2>Log</h2>
         <!-- Moved clear button into section-header's right side -->
         <button class="control-button" onclick="clearLog()" title="Clear the log">
           <i class="fas fa-eraser"></i>Clear Log
         </button>
       </div>
       <div class="log-section" id="logText"></div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="section" id="analytics">
+      <div class="section-header">
+        <h2>Analytics</h2>
+        <span class="info-text">Visual representation of data (live updates)</span>
+      </div>
+      <canvas id="uphChart" style="max-height: 300px;"></canvas>
     </section>
   </main>
 
@@ -298,11 +284,11 @@
   <div class="toast" id="toastMessage"></div>
 
   <!-- Edit Schedule Modal (Bootstrap) -->
-  <div
-    class="modal fade"
-    id="editModal"
-    tabindex="-1"
-    aria-labelledby="editModalLabel"
+  <div 
+    class="modal fade" 
+    id="editModal" 
+    tabindex="-1" 
+    aria-labelledby="editModalLabel" 
     aria-hidden="true"
   >
     <div class="modal-dialog">
@@ -315,25 +301,25 @@
           <input type="hidden" id="editScheduleId" />
           <div class="mb-3">
             <label for="editScheduleName" class="form-label">Schedule Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="editScheduleName"
+            <input 
+              type="text" 
+              class="form-control" 
+              id="editScheduleName" 
               placeholder="Schedule Name"
             />
           </div>
           <div class="mb-3">
             <label for="editDatetimePicker" class="form-label">Select Date & Time</label>
-            <input
-              type="text"
-              class="form-control flatpickr-input"
+            <input 
+              type="text" 
+              class="form-control flatpickr-input" 
               id="editDatetimePicker"
             />
           </div>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
               id="editRepeatDaily"
             />
             <label class="form-check-label" for="editRepeatDaily">
@@ -342,16 +328,16 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
+          <button 
+            type="button" 
+            class="btn btn-secondary" 
             data-bs-dismiss="modal"
           >
             Cancel
           </button>
-          <button
-            type="button"
-            class="btn btn-primary"
+          <button 
+            type="button" 
+            class="btn btn-primary" 
             onclick="saveEdit()"
           >
             Save
@@ -376,7 +362,8 @@
      * ------------------------------- */
     let editScheduleId = null;
     let startTime = null;
-    let editModal = null; // reference to Bootstrap modal
+    let uphChart = null; // Chart.js reference
+    let editModal = null; // Bootstrap modal reference
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize Flatpickr
@@ -389,7 +376,7 @@
         dateFormat: "Y-m-d H:i:S",
       });
 
-      // Fetch schedules, logs, progress
+      // Initialize schedules, logs, progress
       fetchSchedules();
 
       // Update UI repeatedly
@@ -397,6 +384,9 @@
       setInterval(updateLog, 1000);
       setInterval(updateStats, 1000);
       setInterval(updateCountdowns, 1000);
+
+      // **Live** Analytics: update every 5 seconds
+      setInterval(updateCharts, 5000);
 
       // Concurrency slider logic
       const concurrencySlider = document.getElementById('concurrency-slider');
@@ -414,7 +404,7 @@
         .catch(err => console.error(err));
       });
 
-      // Setup the Bootstrap modal
+      // Prepare the Bootstrap modal
       editModal = new bootstrap.Modal(document.getElementById('editModal'), {
         keyboard: false
       });
@@ -467,8 +457,8 @@
 
           // Calculate speed
           const elapsedTime = (new Date() - startTime) / 60000; // in minutes
-          const speed = (elapsedTime > 0 && current > 0)
-                        ? (current / elapsedTime).toFixed(2)
+          const speed = (elapsedTime > 0 && current > 0) 
+                        ? (current / elapsedTime).toFixed(2) 
                         : 0;
           document.getElementById('processingSpeed').innerText = speed;
         })
@@ -485,10 +475,7 @@
           data.logs.forEach(line => {
             if (line.trim()) {
               let logClass = 'log-entry';
-              let logContent = line.replace(
-                /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} /,
-                ''
-              );
+              let logContent = line.replace(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} /, '');
 
               if (logContent.includes('ERROR')) {
                 logClass += ' error';
@@ -552,7 +539,7 @@
       fetch('/add_schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, datetime, repeat_daily: repeatDaily }),
+        body: JSON.stringify({ name: name, datetime: datetime, repeat_daily: repeatDaily }),
       })
       .then(res => res.json())
       .then(data => {
@@ -574,16 +561,16 @@
         <td>${moment(schedule.datetime).format('LLL')}</td>
         <td class="countdown" data-datetime="${schedule.datetime}"></td>
         <td class="repeat-daily-checkbox">
-          <input type="checkbox"
-                 ${schedule.repeat_daily ? 'checked' : ''}
+          <input type="checkbox" 
+                 ${schedule.repeat_daily ? 'checked' : ''} 
                  onclick="toggleRepeatDaily('${schedule.id}', this.checked)">
         </td>
         <td class="schedule-actions">
-          <button class="control-button"
+          <button class="control-button" 
                   onclick="editSchedule('${schedule.id}', '${schedule.name}', '${schedule.datetime}', ${schedule.repeat_daily})">
             Edit
           </button>
-          <button class="control-button delete-button"
+          <button class="control-button delete-button" 
                   onclick="deleteSchedule('${schedule.id}')">
             Delete
           </button>
@@ -646,7 +633,7 @@
       fetch(`/edit_schedule/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, datetime, repeat_daily: repeatDaily }),
+        body: JSON.stringify({ name: name, datetime: datetime, repeat_daily: repeatDaily }),
       })
       .then(res => res.json())
       .then(data => {
@@ -682,7 +669,7 @@
     }
 
     /* -------------------------------
-     * Stats & Toast
+     * Stats & Analytics
      * ------------------------------- */
     function updateStats() {
       fetch('/stats')
@@ -695,7 +682,46 @@
           console.error('Error updating stats:', error);
         });
     }
+    function updateCharts() {
+      fetch('/api/logs/summary')
+        .then(res => res.json())
+        .then(summary => {
+          const avgUph = summary.average_uph || 0;
 
+          if (!uphChart) {
+            // Initialize chart
+            const ctx = document.getElementById('uphChart').getContext('2d');
+            uphChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: ['Previous', 'Now'],
+                datasets: [{
+                  label: 'Average UPH',
+                  data: [avgUph * 0.9, avgUph], // placeholder logic
+                  borderColor: 'rgba(54, 125, 145, 1)',
+                  fill: false,
+                  tension: 0.1
+                }]
+              },
+              options: {
+                scales: {
+                  y: { beginAtZero: true }
+                }
+              }
+            });
+          } else {
+            // Update existing chart
+            const oldData = uphChart.data.datasets[0].data;
+            uphChart.data.datasets[0].data = [oldData[1], avgUph];
+            uphChart.update();
+          }
+        })
+        .catch(err => console.error('Error updating charts:', err));
+    }
+
+    /* -------------------------------
+     * Toast Notifications
+     * ------------------------------- */
     function showToast(message) {
       const toast = document.getElementById('toastMessage');
       toast.textContent = message;
